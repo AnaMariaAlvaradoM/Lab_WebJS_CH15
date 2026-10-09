@@ -27,3 +27,18 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+:root{
+  --verde-hoja: #2D5A27;
+  --verde-brote: #82A352;
+  --terracota: #C86D51;
+  --tierra-oscura: #3E2723;
+  --suculenta: #DCE7E1;
+  --arena: #F9F6F0;
+  --blanco-puro: #FFFFFF;
+  --gris-corteza: #756A63;
+
+  --fuente-titulos: "Playfair Display", Georgia, serif;
+  --fuente-texto: "Plus Jakarta Sans", Arial, sans-serif;
+}
+
