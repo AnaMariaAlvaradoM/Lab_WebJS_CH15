@@ -27,3 +27,140 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+/* ---------- Ejercicio 04 · Variables y base ---------- */
+:root {
+  --verde-hoja: #4f8a3b;
+  --verde-oscuro: #2d4a22;
+  --terracota: #b5603a;
+  --tierra: #4a3426;
+  --crema: #f6f1e7;
+  --gris: #8a8a8a;
+  --fuente-texto: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fuente-titulos: Georgia, "Times New Roman", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  color: var(--tierra);
+  background-color: var(--crema);
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  font-family: var(--fuente-titulos);
+  color: var(--verde-oscuro);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+/* ---------- Estructura general ---------- */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--verde-oscuro);
+  color: var(--crema);
+}
+
+header p {
+  margin: 0;
+  font-family: var(--fuente-titulos);
+  font-size: 1.3rem;
+}
+
+nav a {
+  color: var(--crema);
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+}
+
+main section {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  scroll-margin-top: 1rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+
+#estado {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+#catalogo {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 1rem;
+}
+
+#catalogo li {
+  padding: 1rem;
+  border: 2px solid var(--verde-hoja);
+  border-radius: 0.75rem;
+}
+
+/* Selector de id: el footer */
+#visitanos {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--tierra);
+  color: var(--crema);
+}
+
+#visitanos address {
+  font-style: normal;
+}
+
+#visitanos small {
+  display: block;
+  margin-top: 1rem;
+  opacity: 0.8;
+}
+
+nav a:hover {
+  background-color: var(--terracota);
+}
+
+#catalogo li:hover {
+  border-color: var(--terracota);
+}
+
+
+.abierto {
+  background-color: #d9f0d3;
+  color: #1f5d2a;
+}
+
+.cerrado {
+  background-color: #f6d9d3;
+  color: #8a2a1b;
+}
+
+.agotado {
+  background-color: #e4e4e4;
+  color: var(--gris);
+}
