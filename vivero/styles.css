@@ -27,3 +27,89 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+/* Normalización */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos raiz */
+
+:root {
+  /* Colores principales */
+  --color-principal: #477A50;
+  --color-secundario: #8EAD78;
+  --color-fondo: #FAF7F0;
+  --color-texto: #343D32;
+
+  /* Colores estado */
+  --color-abierto: #477A50;
+  --fondo-abierto: #E5F1E4;
+  --color-cerrado: #994D38;
+  --fondo-cerrado: #F8E8E1;
+
+  /* Tipografía */
+  --fuente-principal: Arial, sans-serif;
+  --fuente-titulos: Georgia, serif;
+}
+
+/* Estilos generales */
+
+body {
+  font-family: var(--fuente-principal);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-principal);
+}
+
+nav a {
+  color: var(--color-principal);
+}
+
+strong {
+  color: var(--color-principal);
+}
+
+/* Estilos de class && ID */
+
+.descripcion {
+  background-color: var(--color-secundario);
+  padding: 12px;
+  border-radius: 6px;
+}
+
+#catalogo {
+  background-color: var(--color-fondo);
+  padding: 20px;
+}
+
+/* Estado apertura */
+
+.abierto {
+  color: var(--color-abierto);
+  background-color: var(--fondo-abierto);
+}
+
+.cerrado {
+  color: var(--color-cerrado);
+  background-color: var(--fondo-cerrado);
+}
+
+/* Estado plantas */
+
+.agotado {
+  color: var(--color-agotado);
+  background-color: var(--fondo-agotado);
+}
+
+/* Estilos de pseudoclases */
+
+nav a:hover {
+  color: var(--color-secundario);
+}
