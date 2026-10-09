@@ -27,3 +27,246 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+:root {
+  --fuente-titulos: "Fraunces", serif;
+  --fuente-texto: "Plus Jakarta Sans", sans-serif;
+  --verde-lima: #88bf36; /* Brote nuevo: botones */
+  --verde-oliva: #85a63f; /* Follaje: fondo de la página */
+  --verde-tierra: #8c862b; /* Musgo seco: fondo de la etiqueta de estado */
+  --amarillo-crema: #f2eeac; /* Luz de sol: bloque "Conócenos" y hovers */
+  --gris-carbon: #1f2a17; /* Verde casi negro: texto general (antes #404040, se leía poco sobre el oliva) */
+  --blanco: #ffffff; /* Blanco: título del bloque de cuidados */
+  --tueste: #2e2416; /* Tierra húmeda: títulos y menú */
+  --cereza: #5e2010; /* Barro de matera: precios y contorno de foco */
+  --cafetal: #1e3a1a; /* Verde bosque: marca y fondo del bloque de cuidados */
+  --hoja: #e8f0d8; /* Hoja tierna: texto sobre verde bosque, líneas y estado "abierto" */
+  --gris: #26301c; /* Verde sombra: descripciones, pie y texto de estado */
+  --rubor: #f6e1d3; /* Arcilla clara: fondo del estado "cerrado" */
+}
+
+body {
+  margin: 0;
+  background-color: var(--verde-oliva);
+  color: var(--gris-carbon);
+  font-family: var(--fuente-texto);
+  font-size: 1.125rem; /* Tamaño de letra un poco mayor al normal (18px aprox.) */
+  line-height: 1.6;
+}
+
+/* Estilo común para los títulos de nivel 1, 2 y 3 */
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+  font-weight: 400; /* Grosor normal (no negrita) */
+  line-height: 1.15; /* Líneas más juntas, porque los títulos son grandes */
+  color: var(--tueste);
+}
+
+/* Encabezado, contenido principal y pie comparten el mismo ancho y centrado */
+main {
+  max-width: 44rem; /* Ancho máximo para que las líneas no queden muy largas */
+  margin: 0 auto; /* Centra el bloque horizontalmente en la pantalla */
+  padding-left: 1.25rem; /* Espacio interno a la izquierda (evita que el texto toque el borde en celular) */
+  padding-right: 1.25rem; /* Espacio interno a la derecha */
+}
+
+/* Enlace enfocado con el teclado (tecla Tab): ayuda a la accesibilidad */
+a:focus-visible {
+  outline: 3px solid var(--cereza); /* Dibuja un contorno rojo alrededor del enlace */
+  outline-offset: 3px; /* Separa un poco ese contorno del enlace */
+}
+
+/* ===== 3. Encabezado y navegación ===== */
+.encabezado {
+  padding-top: 1.5rem;
+  background-color: var(--verde-tierra);
+  text-align: center; /* Espacio arriba del encabezado */
+}
+
+/* Nombre de la marca (logo en texto) */
+.marca {
+  font-family: var(--fuente-titulos); /* Misma fuente de los títulos */
+  font-size: 1.5rem; /* Letra más grande */
+  color: var(--cafetal); /* Verde oscuro */
+  text-decoration: none; /* Quita el subrayado del enlace */
+}
+
+/* Menú de navegación */
+nav {
+  margin-top: 0.25rem; /* Pequeña separación respecto a la marca */
+}
+
+/* Enlaces dentro del menú */
+nav a {
+  margin-right: 1.25rem; /* Separa un enlace del siguiente */
+  color: var(--tueste); /* Color del texto normal */
+  font-size: 1rem; /* Tamaño estándar */
+  font-weight: 600; /* Semi-negrita */
+  text-decoration: none; /* Sin subrayado */
+}
+
+/* Enlaces del menú al pasar el mouse por encima */
+nav a:hover {
+  color: var(--amarillo-crema); /* Cambian a rojo */
+}
+
+/* ===== 4. Portada ===== */
+/* Sección principal de bienvenida */
+.inicio {
+  padding-top: 3rem; /* Espacio arriba */
+  padding-bottom: 3.5rem; /* Espacio abajo */
+}
+
+.estado {
+  display: inline-block; /* Ocupa solo el ancho de su texto, pero acepta padding y márgenes */
+  margin: 0; /* Sin márgenes externos */
+  padding: 0.25rem 0.875rem; /* Espacio interno: arriba/abajo y a los lados */
+  border-radius: 999px; /* Bordes totalmente redondeados (forma de píldora) */
+  background-color: var(--verde-tierra); /* Fondo gris claro */
+  color: var(--gris); /* Texto gris */
+  font-size: 0.9375rem; /* Letra un poco más pequeña */
+  font-weight: 600; /* Semi-negrita */
+}
+
+/* Título principal de la página */
+h1 {
+  margin: 1.25rem 0 1rem; /* Márgenes: arriba, lados (0) y abajo */
+  font-size: 3rem; /* Tamaño grande */
+}
+
+/* Párrafo de introducción */
+.intro {
+  max-width: 34rem; /* Más angosto que el resto para leerlo fácil */
+  margin: 0 0 2rem; /* Solo deja espacio abajo */
+  font-size: 1.25rem; /* Letra un poco más grande que el texto normal */
+}
+
+/* Enlace con aspecto de botón */
+.boton {
+  display: inline-block; /* Permite darle padding como si fuera una caja */
+  padding: 0.75rem 1.5rem; /* Espacio interno que le da tamaño al botón */
+  border-radius: 999px; /* Bordes redondeados tipo píldora */
+  background-color: var(--verde-lima); /* Fondo rojo */
+  color: var(--gris-carbon); /* Texto blanco */
+  font-weight: 600; /* Semi-negrita */
+  text-decoration: none; /* Sin subrayado */
+}
+
+/* Botón al pasar el mouse */
+.boton:hover {
+  background-color: var(--amarillo-crema); /* El fondo cambia a verde oscuro */
+}
+
+/* Imagen de la portada */
+.foto {
+  display: block; /* Se comporta como bloque (ocupa su propia línea) */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: 22rem; /* Altura fija */
+  margin-top: 2.5rem; /* Separación respecto al contenido de arriba */
+  border-radius: 1.5rem; /* Esquinas redondeadas */
+  object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformarse */
+}
+
+/* ===== 5. Conocenos ===== */
+.nosotros {
+  margin-bottom: 3rem; /* Espacio debajo del bloque */
+  padding: 2.5rem 2rem; /* Espacio interno: arriba/abajo y lados */
+  border-radius: 1.5rem; /* Esquinas redondeadas */
+  background-color: var(--gr); /* Fondo verde oscuro */
+  color: var(--verde-oliva);
+}
+
+/* ===== 5. Carta ===== */
+/* Sección del catalogo de productos */
+.plantas {
+  padding-bottom: 3rem; /* Espacio abajo de la sección */
+}
+
+/* Títulos de sección */
+h2 {
+  margin: 0 0 1rem; /* Solo espacio abajo */
+  font-size: 2rem; /* Tamaño mediano-grande */
+}
+
+/* Lista de plantas (elemento con id="catalogo") */
+#catalogo {
+  margin: 0; /* Quita márgenes por defecto de la lista */
+  padding: 0; /* Quita la sangría por defecto de la lista */
+  list-style: none; /* Quita las viñetas (puntos) */
+}
+
+/* Cada producto*/
+.planta {
+  padding: 1.25rem 0; /* Espacio arriba y abajo de cada producto */
+  border-bottom: 1px solid var(--hoja); /* Línea delgada que separa un producto del otro */
+}
+
+.planta h3 {
+  margin: 0; /* Sin márgenes */
+  font-size: 1.375rem; /* Tamaño del nombre */
+}
+
+.planta p {
+  margin: 0.25rem 0 0.5rem; /* Pequeño espacio arriba y abajo */
+  color: var(--gris); /* Texto gris (menos protagonismo que el nombre) */
+}
+
+/* Precio del producto */
+.precio {
+  color: var(--cereza); /* En rojo para que resalte */
+  font-weight: 700; /* En negrita */
+}
+
+.agotado {
+  color: var(--cereza);
+  font-weight: 700;
+}
+
+/* ===== 6. Cuidados ===== */
+/* Bloque destacado sobre el cuidado*/
+.cuidados {
+  margin-bottom: 3rem; /* Espacio debajo del bloque */
+  padding: 2.5rem 2rem; /* Espacio interno: arriba/abajo y lados */
+  border-radius: 1.5rem; /* Esquinas redondeadas */
+  background-color: var(--gris-carbon); /* Fondo verde oscuro */
+  color: var(--hoja); /* Texto verde muy claro para contrastar */
+}
+
+/* Título dentro del bloque de cuidados*/
+.cuidados h2 {
+  color: var(--blanco); /* En blanco para que resalte sobre el fondo oscuro */
+}
+
+/* Párrafo dentro del bloque de origen */
+.cuidados p {
+  margin: 0; /* Sin márgenes */
+  font-size: 1.25rem; /* Letra un poco más grande */
+}
+
+/* ===== 7. Pie de página ===== */
+.pie {
+  padding-top: 2rem; /* Espacio arriba */
+  padding-bottom: 3rem; /* Espacio abajo */
+  color: var(--gris); /* Texto gris (información secundaria) */
+  font-size: 1rem;
+  background-color: var(--verde-tierra);
+  text-align: center; /* Tamaño estándar */
+}
+
+/* Dirección o datos de contacto */
+address {
+  margin-bottom: 0.75rem; /* Espacio debajo */
+  font-style: normal; /* Quita la cursiva que el navegador pone por defecto */
+}
+
+/* ===== 8. Estados que JavaScript activa ===== */
+.abierto {
+  background-color: var(--hoja);
+  color: var(--cafetal);
+}
+
+.cerrado {
+  background-color: var(--rubor);
+  color: var(--cereza);
+}
