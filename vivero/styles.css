@@ -126,7 +126,7 @@ nav a {
   letter-spacing: 0.02em;
 }
 
-/* En caso de que los <a> estén vacíos en el HTML */
+
 nav a[href="#inicio"]:empty::before { content: "Inicio"; }
 nav a[href="#plantas"]:empty::before { content: "Plantas"; }
 nav a[href="#cuidados"]:empty::before { content: "Cuidados"; }
