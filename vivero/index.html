@@ -47,3 +47,63 @@ Pista: para ver tu página mientras trabajas, clic derecho sobre este
 archivo → "Open with Live Server".
 ============================================================
 -->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+    <title>Vivero Guadua</title>
+  </head>
+  <body>
+    <header>
+      <h1>Plantas que se adaptan a tu casa.</h1>
+      <nav>
+        <a href="#inicio"></a>
+        <a href="#plantas"></a>
+        <a href="#cuidados"></a>
+      </nav>
+    </header>
+    <main>
+
+      <!-- Sección 1: inicio (sin h2) -->
+      <section id="inicio">
+        <p>Cultivamos plantas de interior y exterior en la
+          sabana de Bogotá y  <strong>te enseñamos</strong>  a cuidarlas, <em>sin complicaciones.</em>
+        </p>
+        <p id="estado">Consultando horario...</p>
+
+        <img
+          src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80"
+          alt="(muestra una pala de jardín con tierra junto a una matera de barro)">
+
+      </section>
+
+      <!-- Sección 2: plantas -->
+      <section id="plantas">
+        <h2>Plantas</h2>
+        <ul id="catalogo" class="catalogo"></ul>
+      </section>
+
+      <!-- Sección 3: cuidados -->
+      <section id="cuidados">
+        <h2>Te enseñamos a regar, abonar y trasplantar. Cada planta</h2>
+      </section>
+
+    </main>
+
+    <footer id="visitanos">
+
+      <address>Vivero Guadua <br>
+        Calle 12 # 8-30, Chía <br>
+        Lunes a sábado, de 8:00 a. m. a 5:00 p. m. <br>
+        Tel: <a href="tel">(+57) 300 123 45 67</a>
+      </address>
+      <small>>&copy; 2026 Vivero Guadua. Proyecto de clase.</small>
+    </footer>
+
+
+  </body>
+</html>
