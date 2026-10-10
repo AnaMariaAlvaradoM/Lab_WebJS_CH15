@@ -10,12 +10,12 @@ const HORA_APERTURA = 8;
 const HORA_CIERRE = 17;
 
 const plantas = [
-    { nombre: "Suculenta echeveria", cuidado: "Riego cada 10 días. Mucha luz.", precio: 12000, stock: 15 },
-    { nombre: "Monstera deliciosa", cuidado: "Riego semanal. Luz indirecta.", precio: 68000, stock: 4 },
-    { nombre: "Helecho de Boston", cuidado: "Tierra húmeda. Sombra parcial.", precio: 35000, stock: 0 },
-    { nombre: "Cactus San Pedro", cuidado: "Riego cada 15 días. Sol directo.", precio: 18500, stock: 9 },
-    { nombre: "Lirio de paz", cuidado: "Riego semanal. Poca luz.", precio: 42000, stock: 0 },
-    { nombre: "Poto dorado", cuidado: "Riego cada 5 días. Luz media.", precio: 25000, stock: 12 },
+    { nombre: "Suculenta echeveria", categoria: "suculentas", luz: "Mucha luz", cuidado: "Riego cada 10 días.", precio: 12000, stock: 15 },
+    { nombre: "Monstera deliciosa", categoria: "interior", luz: "Luz indirecta", cuidado: "Riego semanal.", precio: 68000, stock: 4 },
+    { nombre: "Helecho de Boston", categoria: "interior", luz: "Sombra parcial", cuidado: "Tierra húmeda.", precio: 35000, stock: 0 },
+    { nombre: "Cactus San Pedro", categoria: "exterior", luz: "Sol directo", cuidado: "Riego cada 15 días.", precio: 18500, stock: 9 },
+    { nombre: "Lirio de paz", categoria: "interior", luz: "Poca luz", cuidado: "Riego semanal.", precio: 42000, stock: 0 },
+    { nombre: "Poto dorado", categoria: "interior", luz: "Luz media", cuidado: "Riego cada 5 días.", precio: 25000, stock: 12 },
 ];
 
 // ============================================================
@@ -38,10 +38,12 @@ const plantas = [
 
 function estaAbierto(hora) {
     // Tu código aquí
+    return hora >= HORA_APERTURA && hora < HORA_CIERRE;
 }
 
 function formatearPrecio(valor) {
     // Tu código aquí
+    return `$${valor.toLocaleString('es-CO')}`;
 }
 
 // ============================================================
@@ -60,6 +62,16 @@ function formatearPrecio(valor) {
 
 function mostrarEstado() {
     // Tu código aquí
+    const horaActual = new Date ().getHours();
+    const elementoEstado = document.getElementById("estado");
+
+    if(estaAbierto(horaActual)) {
+        elementoEstado.textContent = "Abierto ahora. Cerramos a las 5:00 p. m.";
+        elementoEstado.classList.add("abierto");
+    } else {
+        elementoEstado.textContent = "Cerrado. Abrimos a las 8:00 a. m.";
+        elementoEstado.classList.add("cerrado");
+    }
 }
 
 // ============================================================
@@ -85,6 +97,35 @@ function mostrarEstado() {
 
 function mostrarCatalogo() {
     // Tu código aquí
+    const contenedorCatalogo = document.getElementById("catalogo");
+    let htmlCatalogo = "";
+
+    for (let i = 0; i < plantas.length; i++) {
+        let planta = plantas[i];
+
+        if (planta.stock > 0) {
+            htmlCatalogo += `
+                <li class="planta">
+                    <span class="etiqueta-categoria">${planta.categoria}</span>
+                    <h3>${planta.nombre}</h3>
+                    <p>${planta.cuidado}</p>
+                    <p class="luz">☀️ ${planta.luz}</p>
+                    <span class="precio">${formatearPrecio(planta.precio)}</span>
+                </li>
+            `;
+        } else {
+            htmlCatalogo += `
+                <li class="planta agotado">
+                    <span class="etiqueta-categoria">${planta.categoria}</span>
+                    <h3>${planta.nombre}</h3>
+                    <p>${planta.cuidado}</p>
+                    <p class="luz">☀️ ${planta.luz}</p>
+                    <span class="precio">Agotado</span>
+                </li>
+            `;
+        }
+    }
+    contenedorCatalogo.innerHTML = htmlCatalogo;
 }
 
 // No borres estas dos líneas: ponen a funcionar la página

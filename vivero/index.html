@@ -1,49 +1,77 @@
-<!--
-============================================================
-Ejercicios 01, 02 y 03 · La página del Vivero Guadua (HTML)
-============================================================
-El Vivero Guadua cultiva plantas en la sabana de Bogotá y quiere
-vender en línea. Tu trabajo: construir su página, como hicimos
-en clase con Café Origen. Escribe tu HTML DEBAJO de este comentario.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivero Guadua - las mejores plantas del pedazo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Vivero Guadua</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#plantas">Plantas</a></li>
+        <li><a href="#cuidados">Cuidados</a></li>
+      </ul>
+    </nav>
+  </header>
 
-Ejercicio 01 · El esqueleto del documento
-  - <!DOCTYPE html> y <html> con el idioma en español (lang="es").
-  - En el <head>: la codificación UTF-8, el viewport para celular
-    y un <title> que diga "Vivero Guadua" (puedes agregarle más texto).
-  - En el <head>: el <link> a styles.css y el <script> de app.js
-    con el atributo defer.
+  <main>
+    <section id="inicio">
+      <h2>Plantas bien hermosas para tu hogar</h2>
+      <p>cultivamos plantas para interiores y exteriores, ven a Castilla Medellin y te enseñaremos como cuidarlas. <strong>sin complicaciones</strong>. <em>¡visitanos!</em></p>
+      <p id="estado">Consultando horario...</p>
+      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80" alt="pala de jardín con tierra junto a una matera de barro">
+    </section>
 
-Ejercicio 02 · La estructura semántica
-  - Un <header> con el nombre del vivero y un <nav> con 3 enlaces
-    que lleven a las secciones de la página (href="#id-de-la-seccion").
-  - Un solo <main> con 3 <section>, cada una con su id:
-      inicio · plantas · cuidados
-  - Un solo <h1> en toda la página y un <h2> en cada sección
-    que tenga título (plantas y cuidados).
-  - Un <footer> (fuera del <main>) con id="visitanos",
-    un <address> y un <small>.
+    <section id="plantas">
+      <h2>plantas</h2>
+      <ul id="catalogo"></ul>
+    </section>
 
-Ejercicio 03 · El contenido y los atributos
-  - En la sección inicio: un <p id="estado"> que diga
-    "Consultando horario..." (JavaScript lo va a cambiar).
-  - Un <strong> y un <em> dentro del texto de introducción.
-  - Una <img> con src y un alt que describa la foto.
-  - En la sección plantas: un <ul id="catalogo"></ul> VACÍO
-    (JavaScript lo va a llenar en el ejercicio 08).
+    <section id="cuidados">
+      <h2>Cuidados</h2>
+      <p>Aprende las claves fundamentales para mantener tus plantas sanas y hermosas en casa:</p>
+      
+      <div class="grid-cuidados">
+              <div class="tarjeta-cuidado">
+                  <h3>💧 Frecuencia de Riego</h3>
+                  <p>Varía según la especie. Toca la tierra antes de regar; si está seca a un par de centímetros de profundidad, es momento de hidratarla.</p>
+              </div>
 
-Textos que puedes usar (o escribir los tuyos):
-  - Título principal: Plantas que se adaptan a tu casa.
-  - Introducción: Cultivamos plantas de interior y exterior en la
-    sabana de Bogotá y te enseñamos a cuidarlas, sin complicaciones.
-  - Foto: https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80
-    (muestra una pala de jardín con tierra junto a una matera de barro)
-  - Cuidados: Te enseñamos a regar, abonar y trasplantar. Cada planta
-    sale con su tarjeta de cuidados.
-  - Dirección: Calle 12 # 8-30, Chía
-  - Horario: Lunes a sábado, de 8:00 a. m. a 5:00 p. m.
-  - Derechos: © 2026 Vivero Guadua. Proyecto de clase.
+              <div class="tarjeta-cuidado">
+                  <h3>☀️ Luz Necesaria</h3>
+                  <p>Ubica tus plantas según su tipo: luz indirecta brillante para interiores, sombra parcial o sol directo para exteriores resistentes.</p>
+              </div>
 
-Pista: para ver tu página mientras trabajas, clic derecho sobre este
-archivo → "Open with Live Server".
-============================================================
--->
+              <div class="tarjeta-cuidado">
+                  <h3>🌡️ Temperatura Ideal</h3>
+                  <p>Mantén tus plantas alejadas de corrientes de aire acondicionado o calefacción muy fuertes. El clima templado les sienta de maravilla.</p>
+              </div>
+
+              <div class="tarjeta-cuidado">
+                  <h3>🌱 Dificultad Principiante</h3>
+                  <p>¿Estás empezando? Las suculentas y el poto dorado son muy resistentes y perdonan pequeños descuidos.</p>
+              </div>
+          </div>
+    </section>
+
+    <section style="background-color: var(--verde-salvia); padding: 20px; border-radius: 8px; text-align: center; margin-top: 30px;">
+    <h3 style="color: var(--verde-bosque); margin-top: 0;">¿Tienes dudas sobre qué planta llevar?</h3>
+    <p>Escríbenos y te asesoramos personalmente para tu espacio.</p>
+    <a href="https://wa.me/" target="_blank" style="background-color: var(--verde-bosque); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Hablar por WhatsApp</a>
+</section>
+  </main>
+
+  <footer id="visitanos">
+    <address>
+      calle 12 # 8-30, castilla<br>
+      horario: lunes a sabado de 8:00 a. m. a 5:00 p. m.
+    </address>
+    <small>© 2026 vivero Guadua.</small>
+  </footer>
+</body>
+</html>

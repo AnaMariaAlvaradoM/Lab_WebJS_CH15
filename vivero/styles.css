@@ -1,29 +1,234 @@
-/*
-============================================================
-Ejercicios 04 y 05 · La identidad visual del vivero (CSS)
-============================================================
-Escribe tus estilos DEBAJO de este comentario.
-La paleta es TUYA: elige colores que cuenten la historia de un
-vivero (hojas, tierra, materas...). No copies la de Café Origen.
+/* paleta de colores general*/
+:root {
+    --verde-bosque: #245C43;
+    --verde-salvia: #A8BFA0;
+    --crema-natural: #F7F5EC;
+    --terracota: #C77952;
+    --verde-carbon: #25352B;
+    --fuente-principal: sans-serif;
+}
 
-Ejercicio 04 · Variables y base
-  - En :root, por lo menos 4 variables (--nombre: valor;) con tus
-    colores y fuentes.
-  - Usa esas variables con var(--nombre) en por lo menos 4 declaraciones.
-  - Una regla para body con font-family y color.
-  - Por lo menos una regla para los títulos (h1, h2 o h3).
+body {
+    background-color: var(--crema-natural);
+    color: var(--verde-carbon);
+    font-family: var(--fuente-principal);
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+}
 
-Ejercicio 05 · Los tres selectores y los estados
-  - Por lo menos una regla con selector de clase (.algo)
-    y una con selector de id (#algo).
-  - Por lo menos una regla con :hover.
-  - Las clases que JavaScript va a poner, cada una con color
-    o background-color:
-      .abierto  → cuando el vivero está abierto
-      .cerrado  → cuando está cerrado
-      .agotado  → una planta sin unidades (por ejemplo, en gris)
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 30px;
+}
 
-Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
-cierre su llave } y que cada declaración termine en punto y coma.
-============================================================
-*/
+section {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 16px;
+    padding: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+h1, h2 {
+    color: var(--verde-bosque);
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/*header*/
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--crema-natural);
+    z-index: 100;
+    padding: 25px 60px;
+    border-bottom: 1px solid rgba(168, 191, 160, 0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--verde-bosque);
+    font-weight: bold;
+    font-size: 1.05rem;
+    transition: color 0.2s ease;
+}
+
+header nav a:hover {
+    color: var(--terracota);
+    text-decoration: underline;
+}
+
+/* selectores por id y clases */
+#inicio {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#inicio img {
+    width: 100%;
+    height: 350px; /* Tamaño de alto fijo y controlado para que no ocupe toda la pantalla */
+    object-fit: cover;
+    border-radius: 14px;
+    margin-top: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.catalogo-item {
+    background-color: var(--verde-salvia);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+/* estados de negocio js*/
+.abierto {
+    color: var(--verde-bosque);
+    font-weight: bold;
+}
+
+.cerrado {
+    color: var(--terracota);
+    font-weight: bold;
+}
+
+/* catalogo de plantas (tarjetas)*/
+#catalogo {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.planta {
+    background-color: var(--crema-natural);
+    border: none;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.planta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.planta h3 {
+    margin-top: 15px;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.etiqueta-categoria {
+    background-color: var(--verde-salvia);
+    color: var(--verde-carbon);
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: 6px;
+    align-self: flex-start;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.luz {
+    font-size: 0.95rem;
+    color: #555555;
+    margin: 10px 0 20px 0;
+}
+
+.precio {
+    font-weight: bold;
+    color: var(--verde-bosque);
+    font-size: 1.25rem;
+}
+
+/* Estado agotado de las plantas */
+.planta.agotado {
+    background-color: #f1f1f1;
+    opacity: 0.85;
+}
+
+.planta.agotado .precio {
+    color: var(--terracota);
+}
+
+/* GUÍA DE CUIDADOS */
+.grid-cuidados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.tarjeta-cuidado {
+    background-color: var(--crema-natural);
+    border-left: 5px solid var(--verde-bosque);
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-cuidado:hover {
+    transform: translateY(-4px);
+}
+
+.tarjeta-cuidado h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--verde-bosque);
+    font-size: 1.2rem;
+}
+
+.tarjeta-cuidado p {
+    font-size: 0.95rem;
+    color: var(--verde-carbon);
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* ESTILOS DEL FOOTER */
+footer {
+    background-color: var(--verde-carbon);
+    color: var(--crema-natural);
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+}
+
+footer address {
+    font-style: normal;
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+footer small {
+    color: var(--verde-salvia);
+    font-size: 0.9rem;
+}
