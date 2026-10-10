@@ -27,3 +27,115 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+:root {
+  --fondo: #ffffff;
+  --texto: #333333;
+  --verde: #2b4c3f;
+  --tierra: #a45a2a;
+  --fuente: Arial, sans-serif;
+}
+
+body {
+  font-family: var(--fuente);
+  color: var(--texto);
+  background-color: var(--fondo);
+  margin: 0;
+  padding: 0;
+}
+
+
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header p {
+  font-weight: bold;
+  margin: 0;
+  color: var(--verde);
+  font-size: 1.1rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--verde);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--tierra);
+  text-decoration: underline;
+}
+
+
+main {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+section {
+  background-color: #ffffff;
+  padding: 25px 0;
+  margin-bottom: 25px;
+}
+
+h1,
+h2 {
+  color: var(--verde);
+  margin-top: 0;
+}
+
+#inicio img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+#visitanos {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.destacado {
+  border-left: 3px solid var(--tierra);
+  padding-left: 8px;
+}
+
+.abierto {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.cerrado {
+  background-color: #f8d7da;
+  color: #842029;
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.agotado {
+  background-color: #e2e3e5;
+  color: #6c757d;
+  text-decoration: line-through;
+}
