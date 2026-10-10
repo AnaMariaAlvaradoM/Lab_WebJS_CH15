@@ -27,3 +27,137 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Mea+Culpa&display=swap');
+
+:root {
+  --hoja: #2d6a4f;
+  --tierra: #7f4f24;
+  --fondo: #f4f1de;
+  --texto: #333333;
+  --fuente-titulos: "Boldonse", system-ui;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  color: var(--texto);
+  background-color: var(--fondo);
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--fuente-titulos);
+  color: var(--hoja);
+}
+
+.Vivero-Guadua {
+  font-family: var(--fuente-titulos);
+  font-weight: 400;
+  background-color: var(--hoja);
+  color: var(--fondo);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+}
+
+.navbar {
+  margin-inline-start: 1px;
+}
+
+.nav-links {
+  color: var(--fondo);
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: inherit;
+}
+
+.nav-links a:hover {
+  color: var(--tierra);
+}
+
+#title {
+  font-family: var(--fuente-titulos);
+}
+
+h2 {
+  font-family: 'Times New Roman', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+p {
+  font-family: fantasy;
+}
+
+#visitanos {
+  font-family: monospace;
+  font-style: normal;
+  background-color: var(--hoja);
+  color: var(--fondo);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1.2rem;
+}
+
+#visitanos address {
+  font-style: normal;
+}
+
+#visitanos a {
+  color: inherit;
+}
+
+#visitanos a:hover {
+  color: var(--tierra);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.intro-lado {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.intro-lado p {
+  flex: 1;
+}
+
+.intro-lado img {
+  width: 45%;
+  flex-shrink: 0;
+}
+
+.abierto {
+  color: var(--hoja);
+}
+
+.cerrado {
+  color: #9d0208;
+}
+
+.agotado {
+  color: gray;
+}
+
+/* Nombre arriba, descripción/valor abajo con sangría */
+.planta .precio,
+.lista-cuidados span {
+  display: block;
+  margin-left: 1.2rem;
+}
