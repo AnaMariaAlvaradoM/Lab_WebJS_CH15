@@ -27,3 +27,106 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+/*ejercicio 4*/
+:root {
+  --naranja: #ff9a60;
+  --azul: #2477e3;
+  --crema: #febb5e;
+  --blanco: #eaecec;
+  --fuente-principal: Arial, sans-serif;
+}
+
+/* 2. estilos generales */
+body {
+  font-family: var(--fuente-principal);
+  color: var(--azul);
+  background-color: var(--crema);
+  margin: 0;
+}
+
+h1, h2 {
+  color: var(--azul);
+}
+
+/*ejercicio 5*/
+.encabezado {
+  background-color: var(--azul);
+  color: var(--blanco);
+  padding: 20px;
+  text-align: center;
+}
+
+.encabezado h1{
+  color: var(--blanco);
+}
+
+nav a {
+  color: var(--blanco);
+  margin: 10px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--naranja);
+}
+
+/*sesiones*/
+main {
+  padding: 20px;
+}
+
+#inicio {
+  background-color: var(--blanco);
+  padding: 20px;
+}
+
+#inicio img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*estados de vivero*/
+.abierto {
+  color: #35ffc2;
+  background-color: #b9ffdc;
+}
+
+.cerrado {
+  color: #e07152;
+  background-color: #ffceb8;
+}
+
+.agotado {
+  color: #979797;
+  background-color: #f8f8f8;
+}
+
+/*catalogo*/
+#catalogo {
+  background-color: var(--blanco);
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/*cuidados y pie de pagina*/
+#cuidados {
+  background-color: #fea59c;
+  padding: 20px;
+}
+
+#visitanos {
+  background-color: var(--azul);
+  color: var(--blanco);
+  padding: 20px;
+  text-align: center;
+}
+
+#visitanos address {
+  font-style: normal;
+}
+
+/* Bordes de las imagenes */
+img {
+  border-radius: 10px;
+}
