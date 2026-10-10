@@ -1,3 +1,192 @@
+:root {
+
+  --fondo-web: #F9FAF7;
+  --texto-principal: #1B3320;
+ 
+  --verde-manzana: #93B866;
+  --verde-oscuro: #2D5A27;
+
+  --violeta-floral: #8A6BAE;
+  --rosado-bugambilia: #E68CBA;
+
+  --fuente-titulos: "Lora", "Helvetica Nueue", serif;
+  --fuente-texto: "Lato", Arial, sans-serif;
+}
+
+body{
+  margin:0;
+  background-color: var(--fondo-web);
+  color: var(--texto-principal);
+  font-family: var(--fuente-texto);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3{
+  font-family: var(--fuente-titulos);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--verde-oscuro);
+  
+}
+
+h2{
+  font-size: 2.2em;
+}
+
+h3{
+  font-size: 1.8em;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+.encabezado,
+main,
+footer{
+  max-width: 44rem;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+footer{
+  margin-top: 22px;
+}
+
+a:focus-visible{
+  outline: 3px solid var(--rosado-bugambilia);
+  outline-offset: 3px;
+}
+
+.encabezado{
+  padding-top: 1.5rem;
+}
+
+.marca{
+  font-family: var(--fuente-titulos);
+  font-size: 2.5rem;
+  color: var(--verde-oscuro);
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+nav{
+  margin-top: 0.25rem;
+}
+
+nav a{
+  margin-top: 0.25rem;
+}
+
+nav a{
+  margin-right: 1.25rem;
+  color: var(--verde-oscuro);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav a:hover{
+  color: var(--verde-manzana);
+  text-decoration: underline;
+}
+
+.plantas{
+  padding-bottom: 3rem;
+}
+
+
+#catalogo{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.abierto{
+   background-color: var(--verde-manzana);
+}
+
+.cerrado{
+
+  background-color: var(--violeta-floral);
+}
+
+.planta span{
+  color: var(--rosado-bugambilia);
+  font-size: 1.32rem;
+  font-weight: 800;
+}
+
+
+
+.agotado h3,
+.agotado p{
+  color: #888888;
+  text-decoration: line-through;
+}
+
+.agotado span{
+  color: #888888;
+}
+
+#estado{
+  color: var(--fondo-web);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 0px;
+  font-weight: 300;
+}
+
+.boton{
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  background-color: var(--rosado-bugambilia);
+  color:var(--fondo-web);
+  font-weight: 600;
+  text-decoration: none;
+
+}
+
+.foto{
+  display: block;
+  width: 100%;
+  height: 22rem;
+  margin-top: 2.5rem;
+  border-radius: 1.5rem;
+  object-fit: cover;
+}
+
+#cuidados{
+  display: inline-block;
+  background-color: var(--texto-principal);
+  padding: 24px 72px 24px 32px;
+  border-radius: 8px;
+  margin-top: 12px;
+  color:var(--fondo-web)
+}
+
+#cuidados h2{
+  color: var(--fondo-web);
+}
+
+.planta {
+  border-bottom: 1px solid #D1D5DB; 
+  padding-bottom: 1.3rem;
+  margin-bottom: 1.3rem;
+}
+
+.planta:last-child {
+  border-bottom: none;
+}
+
+
+
 /*
 ============================================================
 Ejercicios 04 y 05 · La identidad visual del vivero (CSS)
