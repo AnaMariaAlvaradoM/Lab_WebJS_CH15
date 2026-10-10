@@ -47,3 +47,60 @@ Pista: para ver tu página mientras trabajas, clic derecho sobre este
 archivo → "Open with Live Server".
 ============================================================
 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivero Guadua</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="vivero-guadua">
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#plantas">Plantas</a>
+      <a href="#cuidados">Cuidados</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="portada">
+      <p id="estado" class="estado">Consultando horario...</p>
+      <h1>Plantas que se adaptan a tu casa.</h1>
+      <p class="inicio">  
+        Cultivamos plantas de interior y exterior en la
+        sabana de <strong>Bogotá</strong> y <em>te enseñamos a cuidarlas, sin complicaciones.</em>
+      </p>
+       <img
+          class="foto" 
+          src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80"
+          alt="Herramientas de jardinería junto a una maceta de barro y tierra"
+        >
+    </section>  
+
+    <section id="plantas" class="plantas">
+      <h2>Nuestras plantas</h2>
+      <ul id="catalogo"></ul>
+    </section>
+
+    <section id="cuidados" class="cuidados">
+      <h2>Cuidados para tus plantas</h2>
+      <p>Te enseñamos a regar, abonar y trasplantar. Cada planta
+        sale con su tarjeta de cuidados
+      </p>
+    </section>
+
+  </main>
+
+  <footer id="visitanos" class="final">
+    <h2>Visítanos</h2>
+    <address>
+      Dirección: Calle 12 # 8-30, Chía
+    </address>
+    <small>Derechos: © 2026 Vivero Guadua Maiaiax. Proyecto de clase</small>
+  </footer>
+</body>
+</html>
