@@ -37,11 +37,11 @@ const plantas = [
 // ============================================================
 
 function estaAbierto(hora) {
-    // Tu código aquí
+    return hora >= HORA_APERTURA && hora < HORA_CIERRE;
 }
 
 function formatearPrecio(valor) {
-    // Tu código aquí
+    return "$" + valor.toLocaleString("es-CO");
 }
 
 // ============================================================
@@ -59,7 +59,18 @@ function formatearPrecio(valor) {
 // ============================================================
 
 function mostrarEstado() {
-    // Tu código aquí
+    const pEstado = document.getElementById("estado");
+    if (!pEstado) return;
+
+    const horaActual = new Date().getHours();
+
+    if (estaAbierto(horaActual)) {
+        pEstado.textContent = "Abierto ahora. Cerramos a las 5:00 p. m.";
+        pEstado.classList.add("abierto");
+    } else {
+        pEstado.textContent = "Cerrado. Abrimos a las 8:00 a. m.";
+        pEstado.classList.add("cerrado");
+    }
 }
 
 // ============================================================
@@ -84,7 +95,34 @@ function mostrarEstado() {
 // ============================================================
 
 function mostrarCatalogo() {
-    // Tu código aquí
+    const ulCatalogo = document.getElementById("catalogo");
+    if (!ulCatalogo) return;
+
+    let htmlCatalogo = "";
+
+    for (let i = 0; i < plantas.length; i++) {
+        const planta = plantas[i];
+
+        if (planta.stock === 0) {
+            htmlCatalogo += `
+                <li class="planta agotado">
+                    <h3>${planta.nombre}</h3>
+                    <p>${planta.cuidado}</p>
+                    <span class="precio">Agotado</span>
+                </li>
+            `;
+        } else {
+            htmlCatalogo += `
+                <li class="planta">
+                    <h3>${planta.nombre}</h3>
+                    <p>${planta.cuidado}</p>
+                    <span class="precio">${formatearPrecio(planta.precio)}</span>
+                </li>
+            `;
+        }
+    }
+
+    ulCatalogo.innerHTML = htmlCatalogo;
 }
 
 // No borres estas dos líneas: ponen a funcionar la página
