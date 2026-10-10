@@ -37,11 +37,11 @@ const plantas = [
 // ============================================================
 
 function estaAbierto(hora) {
-    // Tu código aquí
+    return hora >= HORA_APERTURA && hora < HORA_CIERRE
 }
 
 function formatearPrecio(valor) {
-    // Tu código aquí
+    return `$${valor.toLocaleString("es-CO")}`
 }
 
 // ============================================================
@@ -59,7 +59,16 @@ function formatearPrecio(valor) {
 // ============================================================
 
 function mostrarEstado() {
-    // Tu código aquí
+    const estado = document.getElementById("estado")
+    const horaActual = new Date().getHours()
+
+    if (estaAbierto(horaActual)) {
+        estado.textContent = "Abierto ahora. Cerramos a las 5:00 p. m."
+        estado.classList.add("abierto")
+    } else {
+        estado.textContent = "Cerrado. Abrimos a las 8:00 a. m."
+        estado.classList.add("cerrado")
+    }
 }
 
 // ============================================================
@@ -84,7 +93,27 @@ function mostrarEstado() {
 // ============================================================
 
 function mostrarCatalogo() {
-    // Tu código aquí
+    const catalogo = document.getElementById("catalogo")
+    let lista = ""
+
+    for (let i = 0; i < plantas.length; i++) {
+        if(plantas[i].stock == 0) {
+            lista += `
+            <li class="planta agotado">
+            <h3>${plantas[i].nombre}</h3>
+            <p>${plantas[i].cuidado}</p>
+            <span class="precio">Agotado</span>
+            </li>`
+        } else {
+        lista += `
+        <li class="planta">
+        <h3>${plantas[i].nombre}</h3>
+        <p>${plantas[i].cuidado}</p>
+        <span class="precio">${formatearPrecio(plantas[i].precio)}</span>
+        </li>`
+        }
+    }
+    catalogo.innerHTML = lista
 }
 
 // No borres estas dos líneas: ponen a funcionar la página
