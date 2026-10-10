@@ -4,9 +4,66 @@ Ejercicios 01, 02 y 03 · La página del Vivero Guadua (HTML)
 ============================================================
 El Vivero Guadua cultiva plantas en la sabana de Bogotá y quiere
 vender en línea. Tu trabajo: construir su página, como hicimos
-en clase con Café Origen. Escribe tu HTML DEBAJO de este comentario.
+en clase con Café Origen. Escribe tu HTML DEBAJO de este comentario.-->
 
-Ejercicio 01 · El esqueleto del documento
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivero Guadua</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <header class="encabezado">
+    <a class = "marca" href="#inicio">Vivero Guadua</a>
+    <nav>
+     <a href="#plantas">Plantas</a> 
+     <a href="#cuidados">Cuidados</a>  
+     <a href="#visitanos">Visitanos</a>
+    </nav>
+  </header>
+
+  <main>
+
+    
+    <section id="inicio">
+      <p id="estado">Consultando horario...</p>
+      <h1>Plantas que se adaptan a tu casa.</h1>
+      <p class= "intro">Cultivamos plantas de interior y exterior en la
+        sabana de <strong>Bogotá</strong> y te enseñamos a cuidarlas, <em>sin complicaciones</em>.</p>
+      <a class = "boton" href="#plantas"">Ver catalogo</a>
+      <img class = "foto" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80" alt="Pala de jardinería verde con tierra en una mesa con herramientas y maceta">
+    </section>
+
+    <section id="plantas">
+      <h2>Plantas</h2>
+      <ul id="catalogo"></ul> 
+    </section>
+
+    <section id="cuidados">
+      <h2>Cuidados</h2>
+      <p>Te enseñamos a regar, abonar y trasplantar. Cada planta
+    sale con su tarjeta de cuidados.</p>
+    </section>
+
+  </main>
+  <footer id="visitanos">
+    <address>Calle 12 # 8-30, Chía</address>
+    <small>Derechos: © 2026 Vivero Guadua. Proyecto de clase.</small>
+  </footer>
+</body>
+</html>
+
+
+
+<!--Ejercicio 01 · El esqueleto del documento
   - <!DOCTYPE html> y <html> con el idioma en español (lang="es").
   - En el <head>: la codificación UTF-8, el viewport para celular
     y un <title> que diga "Vivero Guadua" (puedes agregarle más texto).
