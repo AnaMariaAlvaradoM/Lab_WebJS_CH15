@@ -27,3 +27,190 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+/* ===== 1. Variables: la paleta de la marca ===== */
+:root {
+    --verde-bosque: #365744;
+    --morado-profundo: #513A70;
+    --texto-principal: #352F38;
+    --texto-secundario: #716B75;
+    --verde-suave: #DCE7DB;
+    --crema-lila: #E7DEED;
+    --crema: #F5F0E6;
+    --blanco: #FFFFFF;
+    --lila: #8B72A8;
+    --verde-salvia: #073e05;
+    --fuente-titulos: "Young Serif", Georgia, serif;
+    --fuente-texto: "Figtree", Arial, sans-serif;
+    --abierto: #086705;
+    --cerrado: #700505;
+    --agotado: #302e31;
+    
+
+}
+
+/* ===== 2. Base: reglas para toda la página ===== */
+body{
+  margin: 0;
+  font-family: var(--fuente-texto);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  background-color: var(--crema);
+  color: var(--texto-principal);
+}
+
+h1,
+h2{
+  font-family: var(--fuente-titulos);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--verde-bosque);
+}
+
+.vivero-guadua,
+main,
+.final{
+  max-width: 44rem;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--morado-profundo);
+  outline-offset: 3px;
+}
+
+/* ===== 3. Encabezado y navegación ===== */
+.vivero-guadua {
+  padding-top: 1.5rem;
+}
+
+nav {
+  margin-top: 0.25rem;
+}
+
+nav a {
+  margin-right: 1.25rem;
+  color: var(--verde-bosque);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--morado-profundo);
+  text-decoration: underline;
+}
+
+/* ===== 4. Portada ===== */
+.portada {
+  padding-top: 3rem;
+  padding-bottom: 3.5rem;
+}
+
+.estado{
+  display: inline-block;
+  margin: 0;
+  padding: 0.25rem 0.875rem;
+  border-radius: 999px;
+  background-color: var(--crema-lila);
+  color: var(--texto-secundario);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.abierto {
+  color: var(--abierto);
+}
+
+.cerrado {
+  color: var(--cerrado);
+}
+.inicio {
+  max-width: 34rem;
+  margin: 0 0 2rem;
+  font-size: 1.25rem;
+}
+
+.foto {
+  display: block;
+  width: 100%;
+  height: 22rem;
+  margin-top: 2.5rem;
+  border-radius: 1.5rem;
+  object-fit: cover;
+}
+
+/* ===== 5. Plantas ===== */
+.plantas {
+  padding-bottom: 3rem;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+}
+
+#catalogo {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.planta {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--verde-suave);
+}
+
+.planta h3 {
+  margin: 0;
+  font-size: 1.375rem;
+}
+
+.planta p {
+  margin: 0.25rem 0 0.5rem;
+  color: var(--texto-secundario);
+}
+
+.agotado{
+  color: var(--agotado);
+}
+
+.precio {
+  color: var(--morado-profundo);
+  font-weight: 700;
+}
+/* ===== 6. Cuidados para tus plantas ===== */
+.cuidados {
+  margin-bottom: 3rem;
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  background-color: var(--verde-bosque);
+  color: var(--verde-suave);
+}
+
+.cuidados h2 {
+  color: var(--blanco);
+}
+
+.cuidados p {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+/* ===== 7. Pie de página ===== */
+#visitanos {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  color: var(--texto-secundario);
+  font-size: 1rem;
+}
+
+#visitanos h2 {
+  color: var(--morado-profundo);
+}
+
+address {
+  margin-bottom: 0.75rem;
+  font-style: normal;
+}

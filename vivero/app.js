@@ -16,6 +16,7 @@ const plantas = [
     { nombre: "Cactus San Pedro", cuidado: "Riego cada 15 días. Sol directo.", precio: 18500, stock: 9 },
     { nombre: "Lirio de paz", cuidado: "Riego semanal. Poca luz.", precio: 42000, stock: 0 },
     { nombre: "Poto dorado", cuidado: "Riego cada 5 días. Luz media.", precio: 25000, stock: 12 },
+    {nombre: "Peonias", cuidado: "Riego dos veces por semana", precio: 50000, stock: 5}
 ];
 
 // ============================================================
@@ -37,11 +38,10 @@ const plantas = [
 // ============================================================
 
 function estaAbierto(hora) {
-    // Tu código aquí
-}
+    return hora >= HORA_APERTURA && hora < HORA_CIERRE;}
 
 function formatearPrecio(valor) {
-    // Tu código aquí
+return "$" + valor.toLocaleString("es-CO");
 }
 
 // ============================================================
@@ -59,8 +59,15 @@ function formatearPrecio(valor) {
 // ============================================================
 
 function mostrarEstado() {
-    // Tu código aquí
-}
+const estado = document.querySelector("#estado");
+const horaActual = new Date().getHours();
+if (estaAbierto(horaActual)) {
+    estado.textContent = "Abierto ahora. Cerramos a las 5:00 p. m.";
+    estado.classList.add("abierto");
+} else {
+    estado.textContent = "Cerrado. Abrimos a las 8:00 a. m.";
+    estado.classList.add("cerrado");
+}}
 
 // ============================================================
 // Ejercicio 08 · El catálogo sale de los datos
@@ -84,7 +91,28 @@ function mostrarEstado() {
 // ============================================================
 
 function mostrarCatalogo() {
-    // Tu código aquí
+const menu = document.querySelector("#catalogo");
+let html = "";
+for (const planta of plantas) {
+    
+    if(planta.stock===0){
+        html+=`
+        <li class="planta agotado">
+        <h3>${planta.nombre}</h3>
+        <p>planta agotado</p>
+        <span class="precio">Agotado</span>
+        </li>`;
+        
+    }else{
+        html += `
+            <li class="planta">
+                <h3>${planta.nombre}</h3>
+                <p>${planta.cuidado}</p>
+                <span class="precio">${formatearPrecio(planta.precio)}</span>
+            </li>`;
+    }        
+}
+menu.innerHTML = html;
 }
 
 // No borres estas dos líneas: ponen a funcionar la página
