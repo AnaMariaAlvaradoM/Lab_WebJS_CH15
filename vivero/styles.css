@@ -33,6 +33,9 @@ cierre su llave } y que cada declaración termine en punto y coma.
   --oscuro: #052911;
   --verdi: #23CC23;
   --menta: #C7EDD6;
+  --rojo: #B0342A;
+  --gris: #6E655F;
+  --blanco: #FFFFFF;
   --fuente-titulos: "Shafarik", Georgia, serif;
   --fuente-texto: Arial, sans-serif;
 }
@@ -40,7 +43,11 @@ cierre su llave } y que cada declaración termine en punto y coma.
 body {
   font-family: var(--fuente-texto);
   color: var(--oscuro);
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
   background-color: var(--menta);
+  background-image: url("hojas.svg");
 }
 
 h1, h2 {
@@ -55,6 +62,113 @@ h1, h2 {
   border-radius: 12px;
 }
 
-#inicio {
-  background-color: var(--menta);
+.lema {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+section img {
+  display: block;
+  width: 420px;
+  max-width: 100%;
+  height: auto;
+  margin: 22px auto;
+  border: 6px solid var(--verde);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+  transform: rotate(-1.2deg);
+  transition: transform 0.3s ease;
+}
+
+section img:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+nav a:hover {
+  color: var(--verdi);
+}
+
+.abierto {
+  background-color: var(--verde);
+  color: var(--blanco);
+}
+
+.cerrado {
+  background-color: var(--rojo);
+  color: var(--blanco);
+}
+
+.agotado {
+  background-color: var(--blanco);
+  color: var(--gris);
+}
+
+footer {
+  margin-top: 60px;
+  padding: 40px 15px 32px;
+  text-align: center;
+  color: var(--menta);
+  background-color: var(--oscuro);
+  border-top: 4px solid var(--verdi);
+}
+
+
+#estado{
+  font-family: var(--fuente-titulos);
+   text-align: left;
+  width: fit-content;
+  margin-right: auto;
+  padding: 0.2em 0.6em;
+  border-radius: 12px;
+}
+#catalogo {
+  list-style: none;        
+  padding: 0;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+#catalogo li {
+  padding: 12px 20px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  color: var(--oscuro);
+  background-color: var(--blanco);
+  border-left: 6px solid var(--verde);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+#catalogo li:hover {
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+#catalogo li.agotado {
+  color: var(--gris);
+  background-color: #E5E5E5;
+  border-left-color: var(--gris);
+}
+.plantas {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--blanco);
+  box-shadow: 0 3px 8px rgba(5, 41, 17, 0.3);
+}
+
+th, td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--menta);
+}
+
+th {
+  background-color: var(--oscuro);
+  color: var(--menta);
+  border-bottom: 3px solid var(--verdi);
+}
+
+tr:hover td {
+  background-color: var(--verde);
+  color: var(--blanco);
+}
+a{
+  color: var(--verde);
 }

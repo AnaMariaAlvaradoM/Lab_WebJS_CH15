@@ -37,29 +37,24 @@ const plantas = [
 // ============================================================
 
 function estaAbierto(hora) {
-    // Tu código aquí
+    return hora >= HORA_APERTURA && hora < HORA_CIERRE;
 }
 
 function formatearPrecio(valor) {
-    // Tu código aquí
+    return "$" + valor.toLocaleString("es-CO");
 }
 
-// ============================================================
-// Ejercicio 07 · El estado en la página (DOM)
-// ============================================================
-// mostrarEstado(): busca el <p id="estado"> y, según la hora
-// actual del computador, escribe UNO de estos textos (exactos):
-//   Abierto ahora. Cerramos a las 5:00 p. m.
-//   Cerrado. Abrimos a las 8:00 a. m.
-// y le agrega la clase "abierto" o "cerrado".
-//
-// Reglas: usa estaAbierto(...) para decidir, textContent para el
-// texto y classList.add(...) para la clase.
-// Pista: new Date().getHours() te da la hora actual.
-// ============================================================
-
 function mostrarEstado() {
-    // Tu código aquí
+    const estado = document.querySelector("#estado");
+    const horaActual = new Date().getHours();
+
+    if (estaAbierto(horaActual)) {
+        estado.textContent = `Abierto ahora. Cerramos a las ${HORA_CIERRE - 12}:00 p. m.`;
+        estado.classList.add("abierto");
+    } else {
+        estado.textContent = `Cerrado. Abrimos a las ${HORA_APERTURA}:00 a. m.`;
+        estado.classList.add("cerrado");
+    }
 }
 
 // ============================================================
@@ -84,7 +79,27 @@ function mostrarEstado() {
 // ============================================================
 
 function mostrarCatalogo() {
-    // Tu código aquí
+    const catalogo = document.querySelector("#catalogo");
+    let html = "";
+
+    for (const planta of plantas) {
+        let clase = "planta";
+        let precio = formatearPrecio(planta.precio);
+
+        if (planta.stock === 0) {
+            clase = "planta agotado";
+            precio = "Agotado";
+        }
+
+        html += `
+            <li class="${clase}">
+                <h3>${planta.nombre}</h3>
+                <p>${planta.cuidado}</p>
+                <span class="precio">${precio}</span>
+            </li>`;
+    }
+
+    catalogo.innerHTML = html;
 }
 
 // No borres estas dos líneas: ponen a funcionar la página

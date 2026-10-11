@@ -55,20 +55,25 @@ archivo → "Open with Live Server".
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vivero Guadua · Plantas para tu hogar</title>
   <link rel="stylesheet" href="styles.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=Shafarik&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shafarik&display=swap" rel="stylesheet">
   <script src="app.js" defer></script>
-
 </head>
 
-<body id="ini">
+<body>
 
   <header class="encabezado">
+      <p id="estado">Consultando horario...</p>
+     <h1>Vivero Guadua: Plantas que se adaptan a tu hogar</h1>
+     <p class="lema">
+        Cultivamos <strong>plantas de interior y exterior</strong> en la
+        sabana de Bogotá y te enseñamos a cuidarlas, <em>sin complicaciones</em>.
+      </p>
     <a class="marca" href="#inicio">Vivero Guadua</a>
     <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#plantas">Plantas</a>
+      <a href="#inicio">Inicio</a> <br>
+      <a href="#plantas">Plantas</a><br>
       <a href="#cuidados">Cuidados</a>
     </nav>
   </header>
@@ -76,12 +81,6 @@ archivo → "Open with Live Server".
   <main>
 
     <section id="inicio">
-      <h1>Vivero Guadua: Plantas que se adaptan a tu hogar</h1>
-      <p id="estado">Consultando horario...</p>
-      <p>
-        Cultivamos <strong>plantas de interior y exterior</strong> en la
-        sabana de Bogotá y te enseñamos a cuidarlas, <em>sin complicaciones</em>.
-      </p>
       <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80"
            alt="Pala de jardín con tierra junto a una matera de barro">
     </section>
@@ -94,14 +93,63 @@ archivo → "Open with Live Server".
     <section id="cuidados">
       <h2>Cuidados</h2>
       <p>
-        Te enseñamos a regar, abonar y trasplantar. Cada planta sale con
-        su tarjeta de cuidados.
+        Te enseñamos a <strong>regar, abonar y trasplantar</strong>. Cada planta
+        sale con su tarjeta de cuidados.
       </p>
+
+      <table class="plantas">
+        <thead>
+          <tr>
+            <th>Planta</th>
+            <th>Luz</th>
+            <th>Riego</th>
+            <th>Temperatura</th>
+            <th>Dificultad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Suculenta</strong></td>
+            <td>Sol pleno</td>
+            <td>2–3 veces x semana</td>
+            <td>10–25 °C</td>
+            <td>Media</td>
+          </tr>
+          <tr>
+            <td><strong>Helecho</strong></td>
+            <td>Sol pleno</td>
+            <td>1× mes</td>
+            <td>15–35 °C</td>
+            <td>Fácil</td>
+          </tr>
+          <tr>
+            <td><strong>Monstera</strong></td>
+            <td>Luz indirecta</td>
+            <td>1× semana</td>
+            <td>18–27 °C</td>
+            <td>Fácil</td>
+          </tr>
+          <tr>
+            <td><strong>Cactus</strong></td>
+            <td>Luz indirecta</td>
+            <td>1× semana</td>
+            <td>18–27 °C</td>
+            <td>Avanzada</td>
+          </tr>
+          <tr>
+            <td><strong>Poto dorado</strong></td>
+            <td>Sol pleno</td>
+            <td>2× mes</td>
+            <td>13–35 °C</td>
+            <td>Fácil</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
   </main>
 
-  <footer id="visitanos" class="pie">
+  <footer id="visitanos">
     <address>
       Calle 12 # 8-30, Chía<br>
       Lunes a sábado, de 8:00 a. m. a 5:00 p. m.
