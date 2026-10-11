@@ -27,3 +27,156 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+:root {
+    --verde-guadua: #4f7a3a;
+    --verde-musgo: #2f4a25;
+    --barro: #b5653b;
+    --crema: #f6f1e4;
+    --gris-agotado: #8a8a80;
+    --fuente-texto: "Segoe UI", Arial, sans-serif;
+    --fuente-titulos: Georgia, "Times New Roman", serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente-texto);
+    color: var(--verde-musgo);
+    background-color: var(--crema);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--verde-guadua);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background-color: var(--verde-musgo);
+}
+
+header a {
+    color: var(--crema);
+    text-decoration: none;
+}
+
+header > a {
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a:hover {
+    color: var(--barro);
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    padding: 2rem 0;
+}
+
+#inicio img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+#cuidados {
+    border-top: 2px solid var(--verde-guadua);
+}
+
+#estado {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-weight: bold;
+}
+
+.abierto {
+    background-color: var(--verde-guadua);
+    color: white;
+}
+
+.cerrado {
+    background-color: var(--barro);
+    color: white;
+}
+
+#catalogo {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.planta {
+    padding: 1.2rem;
+    background-color: white;
+    border: 2px solid var(--verde-guadua);
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.planta:hover {
+    transform: translateY(-4px);
+}
+
+.planta h3 {
+    margin-top: 0;
+}
+
+.precio {
+    font-weight: bold;
+    color: var(--barro);
+}
+
+.agotado {
+    border-color: var(--gris-agotado);
+    color: var(--gris-agotado);
+}
+
+.agotado h3,
+.agotado .precio {
+    color: var(--gris-agotado);
+}
+
+footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--verde-musgo);
+    color: var(--crema);
+}
+
+address {
+    font-style: normal;
+    margin-bottom: 0.5rem;
+}
