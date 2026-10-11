@@ -46,4 +46,63 @@ Textos que puedes usar (o escribir los tuyos):
 Pista: para ver tu página mientras trabajas, clic derecho sobre este
 archivo → "Open with Live Server".
 ============================================================
--->
+--> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivero Guadua | Plantas que se adaptan a tu casa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="encabezado">
+        <a class="marca" href="#inicio">Vivero Guadua</a>
+        <nav>
+            <a href="#plantas">Tipos de plantas</a>
+            <a href="#cuidados">Cuidados de las plantas</a>
+            <a href="#visitanos">Visítanos</a>
+        </nav>
+  </header>
+
+  <main>
+        <section id="inicio" class="portada">
+            <p id="estado" class="estado">Consultando horario...</p>
+            <h1>Vivero Guadua, las plantas de sus sueños.</h1>
+            <p class="intro">
+                Cultivamos plantas de interior y exterior en la sabana de 
+                <strong>Bogotá</strong> y te enseñamos a cuidarlas, <em>sin complicaciones</em>.
+            </p>
+            <a class="boton" href="#plantas">Ver las plantas</a>
+            <img
+                class="foto"
+                src="https://images.unsplash.com/photo-1777882201052-a746eb59264d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                alt="Varias especies de plantas puestas encima de una mesa"
+            >
+        </section>
+
+        <section id="plantas" class="plantas">
+            <h2>Plantas que cultivamos</h2>
+            <ul id="catalogo" class="catalogo"></ul>
+        </section>
+
+        <section id="cuidados" class="cuidados">
+            <h2>Cuidados que requieren</h2>
+            <p>
+                Nuestras plantas requieren una serie de cuidados especiales para que 
+                se conserven durante una gran cantidad de tiempo.
+            </p>
+        </section>
+  </main>
+
+  <footer id="visitanos" class="pie">
+        <address>
+            Carrera 7 # 45-12, Chía<br>
+            Lunes a sábado, de 8:00 a. m. a 5:00 p. m.
+        </address>
+        <small>© 2026 Vivero Guadua. Proyecto de clase.</small>
+  </footer>
+</body>
+</html>
