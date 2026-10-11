@@ -83,8 +83,76 @@ function mostrarEstado() {
 // con innerHTML, como en Café Origen.
 // ============================================================
 
+
+
+function estaAbierto(hora) {
+}
+
+function formatearPrecio(valor) {
+    const precioConPuntos = valor.toLocaleString('es-CO');
+    return "\$" + precioConPuntos;
+}
+
+// ============================================================
+// Ejercicio 07 · El estado en la página (DOM)
+// ============================================================
+
+function mostrarEstado() {
+    
+    const elementoEstado = document.getElementById("estado");
+
+    
+    const horaActual = new Date().getHours();
+
+    // Evaluamos si está abierto usando la función del Ejercicio 06
+    if (estaAbierto(horaActual)) {
+        elementoEstado.textContent = "Abierto ahora. Cerramos a las 5:00 p. m.";
+        elementoEstado.classList.remove("cerrado"); 
+        elementoEstado.classList.add("abierto");
+    } else {
+        elementoEstado.textContent = "Cerrado. Abrimos a las 8:00 a. m.";
+        elementoEstado.classList.remove("abierto");  
+        elementoEstado.classList.add("cerrado");
+    }
+
+}
+
+// ============================================================
+// Ejercicio 08 · El catálogo sale de los datos
+// ============================================================
+
 function mostrarCatalogo() {
-    // Tu código aquí
+    
+    const listaCatalogo = document.getElementById("catalogo");
+
+    let htmlAcumulado = "";
+
+    for (let i = 0; i < plantas.length; i++) {
+        const planta = plantas[i];
+
+        // Variables para personalizar el contenido según el stock
+        let claseLi = "planta";
+        let textoPrecio = "";
+
+        //  unidades (stock) 
+        if (planta.stock === 0) {
+            claseLi = "planta agotado"; 
+            textoPrecio = "Agotado";   
+        } else {
+            textoPrecio = formatearPrecio(planta.precio);
+        }
+
+        // estructura HTML del <li> 
+        htmlAcumulado += `
+            <li class="${claseLi}">
+                <h3>${planta.nombre}</h3>
+                <p>${planta.cuidado}</p>
+                <span class="precio">${textoPrecio}</span>
+            </li>
+        `;
+    }
+
+    listaCatalogo.innerHTML = htmlAcumulado;
 }
 
 // No borres estas dos líneas: ponen a funcionar la página
