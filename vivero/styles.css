@@ -27,3 +27,123 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+:root {
+  --fondo: #F7FEE7;
+  --texto: #1F3D2B;
+  --verde: #2F6B3F;
+  --verde-claro: #A3C585;
+  --tierra: #8B5A3C;
+  --fuente: 'Barlow Condensed', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: 1.2rem;
+  color: var(--texto);
+  background-color: var(--fondo);
+}
+
+h1, h2, h3 {
+  color: var(--verde);
+  font-weight: 700;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--verde);
+  color: var(--fondo);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+nav a {
+  color: var(--fondo);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 1.2rem;
+}
+
+nav a:hover {
+  color: var(--verde-claro);
+  text-decoration: underline;
+}
+
+section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+#estado {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+#catalogo {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.planta {
+  background-color: white;
+  border: 2px solid var(--verde-claro);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.planta:hover {
+  border-color: var(--tierra);
+  transform: translateY(-4px);
+}
+
+.precio {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--tierra);
+  font-size: 1.3rem;
+}
+
+.abierto {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.cerrado {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+.agotado {
+  background-color: #E5E7EB;
+  color: #6B7280;
+  border-color: #9CA3AF;
+}
+
+.agotado .precio {
+  color: #6B7280;
+}
+
+footer {
+  padding: 1.5rem 2rem;
+  background-color: var(--tierra);
+  color: var(--fondo);
+}
