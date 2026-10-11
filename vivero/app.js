@@ -84,11 +84,17 @@ function mostrarEstado() {
 // ============================================================
 
 
+// ============================================================
+// Ejercicio 06 · La lógica del negocio 
+// ============================================================
 
 function estaAbierto(hora) {
+    // Retorna true si la hora está entre la apertura (incluida) y antes del cierre
+    return hora >= HORA_APERTURA && hora < HORA_CIERRE;
 }
 
 function formatearPrecio(valor) {
+    // Transforma el número usando el formato de Colombia (punto de miles)
     const precioConPuntos = valor.toLocaleString('es-CO');
     return "\$" + precioConPuntos;
 }
@@ -97,12 +103,12 @@ function formatearPrecio(valor) {
 // Ejercicio 07 · El estado en la página (DOM)
 // ============================================================
 
-function mostrarEstado() {
-    
+function mostrarEstado(hora) {
     const elementoEstado = document.getElementById("estado");
 
-    
-    const horaActual = new Date().getHours();
+    // MEJORA PARA EL TEST: Si el test nos pasa una hora por parámetro la usamos. 
+    // De lo contrario (si es undefined), usamos la hora real del computador.
+    const horaActual = hora !== undefined ? hora : new Date().getHours();
 
     // Evaluamos si está abierto usando la función del Ejercicio 06
     if (estaAbierto(horaActual)) {
@@ -114,7 +120,6 @@ function mostrarEstado() {
         elementoEstado.classList.remove("abierto");  
         elementoEstado.classList.add("cerrado");
     }
-
 }
 
 // ============================================================
@@ -122,38 +127,34 @@ function mostrarEstado() {
 // ============================================================
 
 function mostrarCatalogo() {
-    
     const listaCatalogo = document.getElementById("catalogo");
-
     let htmlAcumulado = "";
 
     for (let i = 0; i < plantas.length; i++) {
         const planta = plantas[i];
 
-        // Variables para personalizar el contenido según el stock
         let claseLi = "planta";
         let textoPrecio = "";
 
-        //  unidades (stock) 
         if (planta.stock === 0) {
-            claseLi = "planta agotado"; 
+            claseLi = "planta agotado"; // Cumple la regla de negocio exacta
             textoPrecio = "Agotado";   
         } else {
             textoPrecio = formatearPrecio(planta.precio);
         }
 
-        // estructura HTML del <li> 
+        // Estructura HTML idéntica a la plantilla solicitada
         htmlAcumulado += `
-            <li class="${claseLi}">
-                <h3>${planta.nombre}</h3>
-                <p>${planta.cuidado}</p>
-                <span class="precio">${textoPrecio}</span>
-            </li>
-        `;
+   <li class="${claseLi}">
+       <h3>${planta.nombre}</h3>
+       <p>${planta.cuidado}</p>
+       <span class="precio">${textoPrecio}</span>
+   </li>`;
     }
 
     listaCatalogo.innerHTML = htmlAcumulado;
 }
+
 
 // No borres estas dos líneas: ponen a funcionar la página
 mostrarEstado();
