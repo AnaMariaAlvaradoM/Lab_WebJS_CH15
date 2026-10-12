@@ -38,10 +38,13 @@ const plantas = [
 
 function estaAbierto(hora) {
     // Tu código aquí
+    return hora >= HORA_APERTURA && hora < HORA_CIERRE
 }
 
 function formatearPrecio(valor) {
     // Tu código aquí
+    const precioFormateado = valor.toLocaleString("es-CO");
+    return "$" + precioFormateado;
 }
 
 // ============================================================
@@ -60,6 +63,16 @@ function formatearPrecio(valor) {
 
 function mostrarEstado() {
     // Tu código aquí
+const estado = document.getElementById("estado");
+const hora = new Date().getHours();
+    if (estaAbierto(hora)) {
+estado.textContent = "Abierto ahora. Cerramos a las 5:00 p. m.";
+estado.classList.add("abierto");
+    }
+    else {
+    estado.textContent = "Cerrado. Abrimos a las 8:00 a. m.";
+    estado.classList.add("cerrado");
+    }
 }
 
 // ============================================================
@@ -83,10 +96,31 @@ function mostrarEstado() {
 // con innerHTML, como en Café Origen.
 // ============================================================
 
-function mostrarCatalogo() {
-    // Tu código aquí
-}
+    function mostrarCatalogo() {
+        // Tu código aquí
+        const catalogo = document.getElementById("catalogo");
+        let contenido = "";
+        for (const planta of plantas) {
+            if (planta.stock === 0) {
+                contenido += '<li class="planta agotado">';
+            } else {
+                contenido += '<li class="planta">';
+            }
 
-// No borres estas dos líneas: ponen a funcionar la página
-mostrarEstado();
-mostrarCatalogo();
+            contenido += "<h3>" + planta.nombre + "</h3>";
+            contenido += "<p>" + planta.cuidado + "</p>";
+           
+
+            if (planta.stock === 0) {
+                contenido += '<span class="precio">Agotado</span>';
+            } else {
+                contenido += '<span class="precio">' + formatearPrecio(planta.precio) + '</span>';
+            }
+             contenido += '</li>'; 
+        }
+    catalogo.innerHTML = contenido;
+    }
+
+    // No borres estas dos líneas: ponen a funcionar la página
+    mostrarEstado();
+    mostrarCatalogo();
