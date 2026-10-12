@@ -27,3 +27,150 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+:root {
+  --verde-hoja: #2f6b3a;
+  --verde-claro: #e8f1e4;
+  --tierra: #7a4e2d;
+  --crema: #fbf7ef;
+  --texto: #2b2a26;
+  --fuente-titulos: Georgia, "Times New Roman", serif;
+  --fuente-texto: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  color: var(--texto);
+  background-color: var(--crema);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+  color: var(--verde-hoja);
+  line-height: 1.2;
+}
+
+/* Encabezado */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--verde-hoja);
+}
+
+header p {
+  margin: 0;
+  font-family: var(--fuente-titulos);
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--crema);
+}
+
+nav a {
+  color: var(--crema);
+  text-decoration: none;
+  margin-left: 1.2rem;
+}
+
+nav a:hover {
+  color: var(--verde-claro);
+  text-decoration: underline;
+}
+
+/* Secciones */
+section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 1.5rem;
+  border-radius: 12px;
+}
+
+/* Estado (id) */
+#estado {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background-color: var(--verde-claro);
+  color: var(--texto);
+  font-weight: 600;
+}
+
+/* Catálogo */
+#catalogo {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.planta {
+  background-color: white;
+  border: 1px solid var(--verde-claro);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.2s;
+}
+
+.planta h3 {
+  margin-top: 0;
+}
+
+.precio {
+  font-weight: bold;
+  color: var(--tierra);
+}
+
+#catalogo li:hover {
+  background-color: var(--verde-claro);
+  transform: translateY(-3px);
+}
+
+/* Pie de página */
+footer {
+  padding: 1.5rem 2rem;
+  text-align: center;
+  background-color: var(--tierra);
+  color: var(--crema);
+}
+
+/* Clases que JavaScript va a poner */
+#estado.abierto,
+.abierto {
+  background-color: #d4edda;
+  color: #1b5e20;
+}
+
+#estado.cerrado,
+.cerrado {
+  background-color: #f8d7da;
+  color: #8a1c1c;
+}
+
+.agotado {
+  background-color: #e0e0e0;
+  color: #757575;
+}
+
+.agotado .precio,
+.agotado h3 {
+  color: #757575;
+}
