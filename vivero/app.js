@@ -36,14 +36,6 @@ const plantas = [
 // Pista: usa las constantes de arriba, no escribas 8 y 17 a mano.
 // ============================================================
 
-function estaAbierto(hora) {
-    // Tu código aquí
-}
-
-function formatearPrecio(valor) {
-    // Tu código aquí
-}
-
 // ============================================================
 // Ejercicio 07 · El estado en la página (DOM)
 // ============================================================
@@ -83,10 +75,51 @@ function mostrarEstado() {
 // con innerHTML, como en Café Origen.
 // ============================================================
 
-function mostrarCatalogo() {
-    // Tu código aquí
+function estaAbierto(hora) {
+  return hora >= HORA_APERTURA && hora < HORA_CIERRE;
 }
 
+function formatearPrecio(valor) {
+  return "$" + String(valor).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+function mostrarEstado() {
+  const estado = document.querySelector("#estado");
+  const horaActual = new Date().getHours();
+
+  estado.classList.remove("abierto", "cerrado");
+
+  if (estaAbierto(horaActual)) {
+    estado.textContent = "Abierto ahora. Cerramos a las 5:00 p. m.";
+    estado.classList.add("abierto");
+  } else {
+    estado.textContent = "Cerrado. Abrimos a las 8:00 a. m.";
+    estado.classList.add("cerrado");
+  }
+}
+
+function mostrarCatalogo() {
+  const catalogo = document.querySelector("#catalogo");
+  let html = "";
+
+  for (const planta of plantas) {
+    const agotada = planta.stock === 0;
+    const claseAgotado = agotada ? " agotado" : "";
+    const precio = agotada
+      ? "Agotado"
+      : formatearPrecio(planta.precio);
+
+    html += `
+      <li class="planta${claseAgotado}">
+        <h3>${planta.nombre}</h3>
+        <p>${planta.cuidado}</p>
+        <span class="precio">${precio}</span>
+      </li>
+    `;
+  }
+
+  catalogo.innerHTML = html;
+}
 // No borres estas dos líneas: ponen a funcionar la página
 mostrarEstado();
 mostrarCatalogo();
