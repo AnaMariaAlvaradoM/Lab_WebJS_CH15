@@ -37,11 +37,11 @@ const plantas = [
 // ============================================================
 
 function estaAbierto(hora) {
-    // Tu código aquí
+    return hora >= HORA_APERTURA && hora < HORA_CIERRE;
 }
 
 function formatearPrecio(valor) {
-    // Tu código aquí
+    return "$" + valor.toLocaleString("es-CO");
 }
 
 // ============================================================
@@ -59,7 +59,18 @@ function formatearPrecio(valor) {
 // ============================================================
 
 function mostrarEstado() {
-    // Tu código aquí
+    const elementoEstado = document.getElementById("estado");
+    const horaActual = new Date().getHours();
+
+    if (estaAbierto(horaActual)) {
+        elementoEstado.textContent = "Abierto ahora. Cerramos a las 5:00 p. m.";
+        elementoEstado.classList.add("abierto");
+        elementoEstado.classList.remove("cerrado");
+    } else {
+        elementoEstado.textContent = "Cerrado. Abrimos a las 8:00 a. m.";
+        elementoEstado.classList.add("cerrado");
+        elementoEstado.classList.remove("abierto");
+    }
 }
 
 // ============================================================
@@ -84,7 +95,32 @@ function mostrarEstado() {
 // ============================================================
 
 function mostrarCatalogo() {
-    // Tu código aquí
+    const catalogoUl = document.getElementById("catalogo");
+    let htmlContenido = "";
+
+    for (let i = 0; i < plantas.length; i++) {
+        const planta = plantas[i];
+
+        if (planta.stock === 0) {
+            htmlContenido += `
+                <li class="planta agotado">
+                    <h3>${planta.nombre}</h3>
+                    <p>${planta.cuidado}</p>
+                    <span class="precio">Agotado</span>
+                </li>
+            `;
+        } else {
+            htmlContenido += `
+                <li class="planta">
+                    <h3>${planta.nombre}</h3>
+                    <p>${planta.cuidado}</p>
+                    <span class="precio">${formatearPrecio(planta.precio)}</span>
+                </li>
+            `;
+        }
+    }
+
+    catalogoUl.innerHTML = htmlContenido;
 }
 
 // No borres estas dos líneas: ponen a funcionar la página
