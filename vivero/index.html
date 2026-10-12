@@ -47,3 +47,49 @@ Pista: para ver tu página mientras trabajas, clic derecho sobre este
 archivo → "Open with Live Server".
 ============================================================
 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivero Guadua</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="Vivero-guadua">
+    <a class="marca">Vivero Guadua</a>
+    <nav>
+        <a href="#inicio">inicio</a>
+        <a href="#plantas">plantas</a>
+        <a href="#cuidado">cuidado plantas</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Plantas que se adaptan a tu casa</h1>
+    <section id="inicio">
+      <p id="estado"> Consultando horario ...</p>
+      <h2>INICIO</h2>
+      <p class="intro">Cultivamos plantas de interior y exterior en la
+      <strong>sabana de Bogotá</strong> y te enseñamos a cuidarlas, <em>sin complicaciones</em></p>
+      <img class="foto" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80" alt="muestra una pala de jardín con tierra junto a una matera de barro">
+    </section>
+    <section id="plantas">
+      <h2>PLANTAS</h2>
+      <ul id="catalogo" class="catalogo">
+      </ul>
+    </section>
+    <section id="cuidado">
+      <h2>CUIDADO</h2>
+      <p>Te enseñamos a regar, abonar y trasplantar. Cada planta
+      sale con su tarjeta de cuidados.</p>
+    </section>
+  </main>
+  <footer id="visitanos" class="pie">
+    <address>
+      Bogota D.C Calle 12 # 8-30, Chía<br>Lunes a Viernes: 9AM - 3PM <br>Derechos: © 2026 Vivero Guadua. Proyecto de clase.
+    </address>
+  </footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
