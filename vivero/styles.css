@@ -27,3 +27,115 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+:root {
+  /*Paleta de colores para la página*/
+  --color-verde-principal: #2d5a27;   /* Verde follaje */
+  --color-verde-claro: #eef5ed;       /* Fondo suave */
+  --color-tierra: #8b5a2b;            /* Tono tierra / madera */
+  --color-matera: #d97736;            /* Tono arcilla / terracota */
+  --color-texto: #222222;             /* Texto oscuro principal */
+  --color-blanco: #ffffff;
+
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  color: var(--color-texto);
+  background-color: var(--color-verde-claro);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  color: var(--color-verde-principal);
+  margin-top: 0;
+}
+
+h2 {
+  border-bottom: 2px solid var(--color-matera);
+  padding-bottom: 5px;
+}
+
+#inicio {
+  background-color: var(--color-blanco);
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgb(51, 12, 12);
+}
+
+.encabezado {
+  background-color: var(--color-verde-principal);
+  color: var(--color-blanco);
+  padding: 20px;
+  text-align: center;
+}
+
+.encabezado .nombre_vivero {
+  color: var(--color-blanco);
+  margin-bottom: 10px;
+}
+
+.menunav a {
+  color: var(--color-blanco);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+.menunav a:hover {
+  color: var(--color-matera);
+  text-decoration: none;
+}
+
+section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin: 15px 0;
+}
+
+.abierto {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.cerrado {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.agotado {
+  background-color: #e2e3e5;
+  color: #6c757d;
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+section {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--color-blanco);
+  border-radius: 8px;
+}
+
+.pie {
+  background-color: var(--color-tierra);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
