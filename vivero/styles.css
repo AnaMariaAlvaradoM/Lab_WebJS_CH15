@@ -27,3 +27,75 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+/* ===== 1. Variables: la paleta de la marca ===== */
+/*https://coolors.co/002a32-562c2c-f2542d-f5dfbb-0e9594*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+:root {
+  --verde: #002A32;
+  --cafe: #562C2C;
+  --terracota: #F2542D;
+  --rosa: #F5DFBB;
+  --azul: #0E9594;
+  --blanco: #F7F5F2;
+  --fuente-titulos: 'Playfair Display', serif;
+  --fuente-texto: 'Lato', sans-serif;
+}
+
+body {
+  background-color: var(--blanco);
+  color: var(--verde);
+  font-family: var(--fuente-texto);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+}
+
+.encabezado,
+main,
+.pie {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+#visitanos {
+  color: var(--cafe);
+}
+
+nav {
+  margin-top: 0.25rem;
+}
+
+nav a {
+  margin-right: 1.25rem;
+  color: var(--terracota);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--cafe);
+  text-decoration: underline;
+}
+
+.abierto {
+  background-color: var(--blanco);
+  color: var(--cafe);
+}
+
+.cerrado {
+  background-color: var(--rosa);
+  color: var(--cafe);
+}
+
+.agotado {
+  background-color: var(--terracota);
+  color: var(--verde);
+}
