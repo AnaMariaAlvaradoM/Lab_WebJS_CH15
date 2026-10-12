@@ -27,3 +27,159 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+:root {
+    --verde-bosque: #243B32;
+    --verde-salvia: #B5BDA5;
+    --marfil: #F3EFE5;
+    --terracota: #B8795B;
+    --gris-natural: #777A73;
+
+    --fuente-principal: Arial, sans-serif;
+}
+
+/* Estilos generales */
+
+body {
+    font-family: var(--fuente-principal);
+    color: var(--verde-bosque);
+    background-color: var(--marfil);
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* Títulos */
+
+h1, h2 {
+    color: var(--verde-bosque);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+/* Encabezado */
+
+header {
+    background-color: var(--verde-bosque);
+    color: var(--marfil);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--marfil);
+}
+
+/* Navegación */
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: var(--marfil);
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color 0.3s ease;
+}
+
+/* 05. Selectores y estados */
+
+nav a:hover {
+    color: var(--verde-salvia);
+}
+
+/* Contenido principal */
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 35px 20px;
+}
+
+section {
+    background-color: #FFFFFF;
+    padding: 28px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+/* Selector de clase */
+
+.destacado {
+    background-color: var(--verde-salvia);
+    padding: 12px;
+    border-radius: 6px;
+}
+
+/* Selector de id */
+
+#visitanos {
+    background-color: var(--verde-bosque);
+    color: var(--marfil);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+#visitanos address {
+    font-style: normal;
+}
+
+/* Estado del horario */
+
+#estado {
+    padding: 10px 14px;
+    border-radius: 6px;
+}
+
+/* Vivero abierto */
+
+.abierto {
+    color: var(--verde-bosque);
+    background-color: #DCE8DC;
+}
+
+/* Vivero cerrado */
+
+.cerrado {
+    color: #793D31;
+    background-color: #F0DDD5;
+}
+
+/* Planta sin unidades */
+
+.agotado {
+    color: var(--gris-natural);
+    background-color: #E8E7E2;
+}
+
+/* Imagen */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* Catálogo */
+
+#catalogo {
+    padding-left: 22px;
+}
+
+/* Pie de página */
+
+footer small {
+    display: block;
+    margin-top: 15px;
+    color: var(--verde-salvia);
+}
