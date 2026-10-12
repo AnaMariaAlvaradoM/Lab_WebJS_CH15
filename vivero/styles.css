@@ -27,3 +27,58 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+:root{
+  --verde-hoja: #2e6f40;
+  --terracota: #c86d51;
+  --fondo-suave: #f4f7f4;
+  --texto-oscuro: #212529;
+  --fuente-base: system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--fuente-base);
+  color: var(--texto-oscuro);
+  background-color: var(--fondo-suave);
+  margin: 0;
+  margin: 20px;
+}
+
+.colortitle{
+  color: var(--verde-hoja)
+}
+
+/* Selector de ID (#) */
+#visitanos {
+  border-top: 2px solid var(--terracota);
+  padding-top: 15px;
+  margin-top:30px;
+}
+
+/* Selector de ETIQUETA + :hover: cambia el estilo al pasar el mouse por un enlace */
+a {
+  color: var(--verde-hoja);
+  text-decoration: none; /* Le quita la línea subrayada por defecto */
+}
+
+a:hover {
+  color: var(--terracota);
+  text-decoration: underline; /* Vuelve a subrayar al pasar el cursor */
+}
+
+/* Clases que activará JavaScript según la lógica del vivero */
+
+.abierto {
+  color: #1e7e34;            /* Verde vibrante para indicar que la tienda opera */
+  font-weight: bold;
+}
+
+.cerrado {
+  color: #bd2130;            /* Rojo para indicar que el vivero está cerrado */
+  font-weight: bold;
+}
+
+.agotado {
+  color: #6c757d;            /* Gris opaco */
+  opacity: 0.6;              /* Hace que el elemento se vea medio transparente */
+}
