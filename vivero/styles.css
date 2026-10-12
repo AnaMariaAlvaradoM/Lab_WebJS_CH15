@@ -27,3 +27,155 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+:root{
+  --verde_musgo_claro: #EBF3EC;
+  --terracota: #C86D51;
+  --verde_eucalipto: #5F8575;
+  --cafe_con_leche: #A67B5B;
+  --hoja: #E4ECE5; /*fuente de horario */
+  --rubor: #F6E3E0; /* fuente de horario*/
+  --cereza: #B0342A; /* Rojo para fondos */
+  --texto-principal: #2C3E2D;
+  --agotado: #95A5A6;
+  --texto-agotado: #4a4c4d;
+  --fuente-titulos:"Playfair Display", serif;
+  --fuente-texto: "Open Sans", sans-serif;
+}
+
+body{
+  margin: 0;
+  padding: 0 1.5rem;
+  background-color: var(--verde_musgo_claro);
+  color: var(--texto-principal);
+  font-family: var(--fuente-texto);
+  font-size: 1.125rem;
+  line-height: 1.6;
+
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos); 
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--cafe_con_leche);
+}
+
+nav a {
+    margin-right: 1.00rem; 
+    color: var(--texto-principal); 
+    font-size: 1rem; 
+    font-weight: 600;
+    text-decoration: none; 
+}
+
+nav a:hover {
+    color: var(--terracota);
+}
+
+.portada {
+    padding-top: 2rem; /* Separa la portada del encabezado. */
+    padding-bottom: 2.5rem; /* Separa la portada de la sección siguiente. */
+}
+
+.portada h2{
+  margin-top: 1.5rem;
+}
+
+h1 {
+    margin: 1.25rem 0 1rem; 
+    font-size: 3rem;
+}
+
+.estado {
+    display: inline-block; 
+    margin: 0; 
+    padding: 0.25rem 0.875rem; 
+    border-radius: 999px; 
+    background-color: var(--agotado);
+    color: var(--texto-agotado); 
+    font-size: 0.9375rem; 
+    font-weight: 600; 
+}
+
+.foto {
+    display: block;
+    width: 100%; 
+    height: 22rem;
+    margin-top: 2.5rem; 
+    border-radius: 1.5rem; 
+    object-fit: cover;
+}
+
+.plantas{
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+h2 {
+    margin: 0 0 1rem;
+    font-size: 2rem;
+}
+
+.planta {
+    background-color: var(--hoja);         
+    padding: 1.5rem;                       
+    border-radius: 1rem;                   
+    margin-bottom: 1.25rem;                
+    list-style: none;                    
+}
+
+.planta h3 {
+    margin: 0;
+    font-size: 1.375rem;
+}
+
+.planta p {
+    margin: 0.25rem 0 0.5rem;
+    color: var(--texto-principal); 
+}
+
+.precio {
+    color: var(--terracota);
+    font-weight: 700; 
+}
+
+.stock {
+    color: var(--terracota);
+    font-weight: 700; 
+}
+
+.pie {
+    padding-top: 2rem; 
+    padding-bottom: 3rem;
+    color: var(--texto-principal); 
+    font-size: 1rem; 
+}
+
+#visitanos {
+    background-color: var(--verde_eucalipto);
+    color: var(--hoja);
+    padding: 2rem;
+    text-align: center;
+}
+
+address {
+    margin-bottom: 0.75rem; 
+    font-style: normal;
+}
+
+.abierto {
+    background-color: var(--hoja); 
+    color: var(--verde_eucalipto);
+}
+
+.cerrado {
+    background-color: var(--rubor); 
+    color: var(--cereza);
+}
+
+.agotado{
+  background-color: var(--agotado); 
+  color: var(--texto-agotado); 
+}
