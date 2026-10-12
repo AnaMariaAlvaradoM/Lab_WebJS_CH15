@@ -27,3 +27,204 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+
+:root {
+    --verde: #4A5D4E;
+    --terracota: #D27D56;
+    --crema: #F7F4EB;
+    --marron: #5C4D41;
+    --gris-claro: #E2E8F0;
+    --fuente-titulos: "Young Serif", Georgia, serif;
+    --fuente-texto: "Figtree", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--crema);
+    color: var(--marron);
+    font-family: var(--fuente-texto);
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--fuente-titulos);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--verde);
+}
+
+.encabezado,
+main,
+.pie {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--terracota);
+    outline-offset: 3px;
+}
+
+.encabezado {
+    padding-top: 1.5rem;
+}
+
+.marca {
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    color: var(--verde);
+    text-decoration: none;
+}
+
+nav {
+    margin-top: 0.25rem;
+}
+
+nav a {
+    margin-right: 1.25rem;
+    color: var(--marron);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--terracota);
+    text-decoration: underline;
+}
+
+/* Portada */
+.portada {
+    padding-top: 3rem;
+    padding-bottom: 3.5rem;
+}
+
+.estado {
+    display: inline-block;
+    margin: 0;
+    padding: 0.25rem 0.875rem;
+    border-radius: 999px;
+    background-color: var(--gris-claro);
+    color: var(--marron);
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+h1 {
+    margin: 1.25rem 0 1rem;
+    font-size: 3rem;
+}
+
+.intro {
+    max-width: 34rem;
+    margin: 0 0 2rem;
+    font-size: 1.25rem;
+}
+
+.boton {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    background-color: var(--terracota);
+    color: var(--crema);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.boton:hover {
+    background-color: var(--verde);
+}
+
+.foto {
+    display: block;
+    width: 100%;
+    height: 22rem;
+    margin-top: 2.5rem;
+    border-radius: 1.5rem;
+    object-fit: cover;
+}
+
+.plantas {
+    padding-bottom: 3rem;
+}
+
+h2 {
+    margin: 0 0 1rem;
+    font-size: 2rem;
+}
+
+#catalogo {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.producto {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--marron);
+}
+
+.producto h3 {
+    margin: 0;
+    font-size: 1.375rem;
+}
+
+.producto p {
+    margin: 0.25rem 0 0.5rem;
+    color: var(--marron);
+}
+
+.precio {
+    color: var(--terracota);
+    font-weight: 700;
+}
+
+.cuidados {
+    margin-bottom: 3rem;
+    padding: 2.5rem 2rem;
+    border-radius: 1.5rem;
+    background-color: var(--verde);
+    color: var(--crema);
+}
+
+.cuidados h2 {
+    color: var(--crema);
+}
+
+.cuidados p {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.pie {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    color: var(--marron);
+    font-size: 1rem;
+}
+
+address {
+    margin-bottom: 0.75rem;
+    font-style: normal;
+}
+
+.abierto {
+    background-color: var(--verde);
+    color: var(--crema);
+}
+
+.cerrado {
+    background-color: var(--terracota);
+    color: var(--crema);
+}
+
+.agotado {
+    background-color: var(--gris-claro);
+    color: var(--marron);
+}
