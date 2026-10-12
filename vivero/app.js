@@ -10,13 +10,14 @@ const HORA_APERTURA = 8;
 const HORA_CIERRE = 17;
 
 const plantas = [
-    { nombre: "Suculenta echeveria", cuidado: "Riego cada 10 días. Mucha luz.", precio: 12000, stock: 15 },
-    { nombre: "Monstera deliciosa", cuidado: "Riego semanal. Luz indirecta.", precio: 68000, stock: 4 },
-    { nombre: "Helecho de Boston", cuidado: "Tierra húmeda. Sombra parcial.", precio: 35000, stock: 0 },
-    { nombre: "Cactus San Pedro", cuidado: "Riego cada 15 días. Sol directo.", precio: 18500, stock: 9 },
-    { nombre: "Lirio de paz", cuidado: "Riego semanal. Poca luz.", precio: 42000, stock: 0 },
-    { nombre: "Poto dorado", cuidado: "Riego cada 5 días. Luz media.", precio: 25000, stock: 12 },
+    { nombre: "Suculenta echeveria", cuidado: "Riego cada 10 días. Mucha luz.", precio: 12000, stock: 15, imagen:"https://www.picturethisai.com/image-handle/website_cmsname/image/1080/153653709186793500.jpeg?x-oss-process=image/format,webp"},
+    { nombre: "Monstera deliciosa", cuidado: "Riego semanal. Luz indirecta.", precio: 68000, stock: 4 , imagen:"https://budsnblush.com/cdn/shop/files/deliciosa_bnb_main.png?v=1761399544&width=360"},
+    { nombre: "Helecho de Boston", cuidado: "Tierra húmeda. Sombra parcial.", precio: 35000, stock: 0 , imagen:"https://content.elmueble.com/medio/2024/01/15/planta-para-el-bano-helecho-boston_00000000_b3212fc9_240115102558_1000x1206.jpg"},
+    { nombre: "Cactus San Pedro", cuidado: "Riego cada 15 días. Sol directo.", precio: 18500, stock: 9,imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7BrdtcZP65YNC8m0iiz9KCRmmk7GujsQMhDfCq3BFgUBrRQnh5vK2wDU&s=10" },
+    { nombre: "Lirio de paz", cuidado: "Riego semanal. Poca luz.", precio: 42000, stock: 0, imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8mHUQ2x0Ix85ncmZF1ZWvcTtYVL85Wtqpd8G6xRGBKvO3_qeZEtWSDSQ&s=10"},
+    { nombre: "Poto dorado", cuidado: "Riego cada 5 días. Luz media.", precio: 25000, stock: 12 ,imagen:"https://www.hola.com/horizon/original_aspect_ratio/a57025912008-1-adobestock1228183385.jpg"},
 ];
+
 
 // ============================================================
 // Ejercicio 06 · La lógica del negocio (no toca la página)
@@ -37,11 +38,11 @@ const plantas = [
 // ============================================================
 
 function estaAbierto(hora) {
-    // Tu código aquí
+    return hora >= HORA_APERTURA && hora < HORA_CIERRE;
 }
 
 function formatearPrecio(valor) {
-    // Tu código aquí
+    return "$" + valor.toLocaleString("es-CO");
 }
 
 // ============================================================
@@ -59,7 +60,16 @@ function formatearPrecio(valor) {
 // ============================================================
 
 function mostrarEstado() {
-    // Tu código aquí
+    const estado = document.querySelector("#estado");
+    const horaActual = new Date().getHours();
+
+    if (estaAbierto(horaActual)) {
+        estado.textContent = "Abierto ahora. Cerramos a las 5:00 p. m.";
+        estado.classList.add("abierto");
+    } else {
+        estado.textContent = "Cerrado. Abrimos a las 8:00 a. m.";
+        estado.classList.add("cerrado");
+    }
 }
 
 // ============================================================
@@ -84,7 +94,26 @@ function mostrarEstado() {
 // ============================================================
 
 function mostrarCatalogo() {
-    // Tu código aquí
+    let salida="";
+    for (i = 0; i < plantas.length; i++) {
+        if (plantas[i].stock < 1) {
+            salida += `<li class="planta agotado"> 
+                    <h3>${plantas[i].nombre}</h3>
+                    <p>${plantas[i].cuidado}</p>
+                    <span class="precio">Agotado</span>
+                    <img class="imagen" src="${plantas[i].imagen}" alt="Imagen de la planta">
+                </li>`
+        } else {
+            salida += `<li class="planta"> 
+                    <h3>${plantas[i].nombre}</h3>
+                    <p>${plantas[i].cuidado}</p>
+                    <span class="precio">${formatearPrecio(plantas[i].precio)}</span>
+                    <img class="imagen" src="${plantas[i].imagen}" alt="Imagen de la planta">
+                </li>`
+
+        } 
+    }
+    catalogo.innerHTML = salida; 
 }
 
 // No borres estas dos líneas: ponen a funcionar la página
