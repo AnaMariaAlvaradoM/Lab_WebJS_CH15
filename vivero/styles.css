@@ -27,3 +27,142 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+:root {
+    --verde: #2F5D3A;
+    --verde-claro: #A8C686;
+    --crema: #F4F1E7;
+    --blanco: #FFFFFF;
+    --texto: #343A32;
+
+    --fuente: 'Figtree', sans-serif;
+    --titulos: 'Young Serif', serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente);
+    color: var(--texto);
+    background-color: var(--crema);
+}
+
+.encabezado {
+    background-color: var(--verde);
+    padding: 15px;
+}
+
+.marca {
+    color: var(--blanco);
+    font-family: var(--titulos);
+    font-size: 22px;
+    text-decoration: none;
+}
+
+nav {
+    margin-top: 12px;
+}
+
+nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+nav a:hover {
+    color: var(--verde-claro);
+}
+
+#inicio {
+    text-align: center;
+    padding: 25px 15px;
+}
+
+h1, h2 {
+    font-family: var(--titulos);
+    color: var(--verde);
+}
+
+.intro {
+    line-height: 1.5;
+}
+
+.foto {
+    width: 80%;
+    max-width: 700px;
+    border-radius: 5px;
+}
+
+.estado {
+    padding: 5px;
+}
+
+.abierto {
+    color: var(--verde);
+    background-color: var(--verde-claro);
+}
+
+.cerrado {
+    color: var(--blanco);
+    background-color: #B8754D;
+}
+
+.plantas {
+    padding: 25px;
+    text-align: center;
+}
+
+.catalogo {
+    list-style: none;
+    padding: 0;
+}
+
+.catalogo li {
+    background-color: var(--blanco);
+    border: 1px solid var(--verde-claro);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px auto;
+    max-width: 300px;
+}
+
+.agotado {
+    background-color: #E0E0E0;
+    color: #666666;
+}
+
+.cuidados {
+    padding: 25px 15px;
+    text-align: center;
+}
+
+.cuidados h2 {
+    color: var(--verde);
+}
+
+.cuidados p {
+    background-color: var(--verde-claro);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.pie {
+    padding: 20px 15px;
+    text-align: center;
+}
+
+.pie address {
+    background-color: var(--verde);
+    color: var(--blanco);
+    font-style: normal;
+    line-height: 1.8;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto 15px;
+}
+
+.pie small {
+    color: var(--texto);
+}
