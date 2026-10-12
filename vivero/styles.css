@@ -27,3 +27,51 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+:root { 
+  --color-principal: #1D4ED8;
+  --color-secundario:#93C5FD;
+  --color-fondo: #E9F1FA;
+  --fuente-principal: sans-serif;
+  --fuente-secundaria: Monospace;
+}
+
+body {
+font-family: var(--fuente-principal);
+color: black;
+background-color: var(--color-fondo);
+}
+
+h1 {
+  font-family: var(--fuente-principal);
+  text-align: center;
+  color: var(--color-principal);
+}
+
+#estado {
+  font-family: var(--fuente-secundaria);
+  color: var(--color-principal);  
+}
+
+.planta {
+  font-family: var(--fuente-principal);
+}
+
+.abierto {
+  font-family: var(--fuente-secundaria);
+  background-color: yellow;
+}
+
+.cerrado {
+  font-family: var(--fuente-secundaria);
+  background-color: red;
+}
+
+.agotado {
+    font-family: var(--fuente-secundaria);
+  background-color: gray;
+}
+
+nav a:hover {
+color: var(--color-secundario);
+}
+
