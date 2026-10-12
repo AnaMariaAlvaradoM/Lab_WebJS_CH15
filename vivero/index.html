@@ -24,8 +24,8 @@ Ejercicio 02 · La estructura semántica
     un <address> y un <small>.
 
 Ejercicio 03 · El contenido y los atributos
-  - En la sección inicio: un <p id="estado"> que diga
-    "Consultando horario..." (JavaScript lo va a cambiar).
+  - En la sección inicio: un .."<p id="estado"> que diga
+    "Consultando horario. (JavaScript lo va a cambiar).
   - Un <strong> y un <em> dentro del texto de introducción.
   - Una <img> con src y un alt que describa la foto.
   - En la sección plantas: un <ul id="catalogo"></ul> VACÍO
@@ -47,3 +47,57 @@ Pista: para ver tu página mientras trabajas, clic derecho sobre este
 archivo → "Open with Live Server".
 ============================================================
 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivero Guadua</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Isometra&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="encabezado">
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#cuidados">Cuidados</a>
+      <a href="#plantas">Nuestras plantas</a>
+      <a href="#visitanos">Visitanos</a>
+    </nav>
+  </header>
+    
+    <main>
+    <section id="inicio" class="inicio">
+      <p id="estado"> Consultando horario...</p>
+      <h1>Vivero Guadua</h1>
+      <p class="introduccion">
+        Cultivamos plantas de interior y exterior en la sabana de <strong>Bogotá</strong> y te enseñamos a cuidarlas, <em>sin complicaciones.</em></p>
+      <img class="imagen" src="https://gyj-jardines.com/wp-content/uploads/2024/04/que-es-un-vivero-848x450.jpg" alt="Imagen de vivero">
+      </section>
+
+    <section id="plantas" class="plantas">
+      <h2>Nuestras plantas</h2>
+      <ul id="catalogo"></ul> 
+    </section>
+
+    <section id="cuidados" class="cuidados">
+      <h2>Cuidados</h2>
+      <p>Te enseñamos a regar, abonar y trasplantar. Cada planta
+    sale con su tarjeta de cuidados.</p>
+    </section>
+
+  </main>
+  <footer id="visitanos" class="pie">
+    ¡Vísitanos!
+    <address>
+      Estamos ubicados en la Calle 1 Sur # 13 27, Barrio el Chavo, Bogotá<br>
+      Lunes a viernes, de 08:00 a. m. a 5:00 p. m.
+    </address>
+    <small>© 2026 Vivero Guadua. Proyecto de clase.</small>
+  </footer>
+</body>
+</html>
