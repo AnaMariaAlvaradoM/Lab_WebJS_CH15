@@ -37,11 +37,11 @@ const plantas = [
 // ============================================================
 
 function estaAbierto(hora) {
-    // Tu código aquí
+    return hora >=HORA_APERTURA && hora < HORA_CIERRE;
 }
 
 function formatearPrecio(valor) {
-    // Tu código aquí
+    return "$" + valor.toLocaleString("es-CO");
 }
 
 // ============================================================
@@ -59,7 +59,13 @@ function formatearPrecio(valor) {
 // ============================================================
 
 function mostrarEstado() {
-    // Tu código aquí
+    const estado = document.querySelector("#estado");
+    const horaActual = new Date().getHours();
+    if(estaAbierto(horaActual)){
+    estado.textContent = "Abierto ahora. Cerramos a las 7PM";
+    }else{
+        estado.textContent = "Cerrado, abrimos a las 7AM";
+    }
 }
 
 // ============================================================
@@ -84,7 +90,17 @@ function mostrarEstado() {
 // ============================================================
 
 function mostrarCatalogo() {
-    // Tu código aquí
+    const catalogo = document.querySelector("#catalogo")
+    let html = "";
+    for(const planta of plantas){
+        html +=`
+        <li class="planta">
+            <h3>${planta.nombre}</h3>
+            <p>${planta.cuidado}</p>
+            <span class="precio">${formatearPrecio(planta.precio)}</span>
+        </li>`;
+    }
+    catalogo.innerHTML = html;
 }
 
 // No borres estas dos líneas: ponen a funcionar la página
