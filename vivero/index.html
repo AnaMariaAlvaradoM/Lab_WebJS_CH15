@@ -47,3 +47,62 @@ Pista: para ver tu página mientras trabajas, clic derecho sobre este
 archivo → "Open with Live Server".
 ============================================================
 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivero Guadua</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js"  defer></script>
+</head>
+
+<body>
+  <header class="encabezado">
+        <a class="marca" href="#inicio">Vivero Guadua</a>
+        <nav>
+            <a href="#plantas">Catalogo</a>
+            <a href="#cuidados">Cuidados especiales</a>
+            <a href="#visitanos">Contáctanos</a>
+        </nav>
+    </header>
+    <main>
+        <section id="inicio" class="portada">
+            <p id="estado" class="estado">Consultando horario...</p>
+            <h1>Una historia, una planta</h1>
+            <p class="intro">
+              La naturaleza tiene el poder de <strong> transformar</strong> cualquier espacio; 
+              nosotros te ayudamos a  <em>hacerla parte de tu historia  </em>
+            </p>
+            
+            <img
+                class="foto"
+                src="https://i.pinimg.com/1200x/34/0e/4f/340e4f2fd38d6b49b6a3ddbcc001a6c9.jpg"
+                alt="Imagen Vivero Guaduas"
+            >
+        </section>
+
+        <!-- Carta: JavaScript la llena con los productos -->
+        <section id="plantas" class="plantas">
+            <h2>Plantas</h2>
+            <ul id="catalogo" class="catalogo"></ul>
+        </section>
+
+        <section id="cuidados" class="cuidados">
+            <h2>Cuidados</h2>
+            <p>
+                En nuestro vivero no solo encuentras plantas, también te brindamos orientación para cuidarlas. 
+                Por ello queremos acompañarte en cada etapa de su crecimiento con recomendaciones sencillas y útiles.
+            </p>
+        </section>
+    </main>
+    <footer id="visitanos" class="pie">
+        <address>
+            Carrera 8 # 45-12, Bogotá<br>
+            Lunes a viernes, de 7:00 a. m. a 7:00 p. m.
+        </address>
+        <small>© 2026 Vivero Guadua. Proyecto de clase.</small>
+    </footer>
+</body>
+</html>
