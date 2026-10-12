@@ -62,9 +62,11 @@ function mostrarEstado() {
     const estado = document.querySelector("#estado");
     const horaActual = new Date().getHours();
     if(estaAbierto(horaActual)){
-    estado.textContent = "Abierto ahora. Cerramos a las 7PM";
+    estado.textContent = "Abierto ahora. Cerramos a las 5:00 p. m.";
+    estado.classList.add("abierto");
     }else{
-        estado.textContent = "Cerrado, abrimos a las 7AM";
+        estado.textContent = "Cerrado. abrimos a las 8:00 a. m.";
+        estado.classList.add("cerrado");
     }
 }
 
@@ -93,12 +95,21 @@ function mostrarCatalogo() {
     const catalogo = document.querySelector("#catalogo")
     let html = "";
     for(const planta of plantas){
+        if(planta.stock===0){
+            html +=`
+            <li class="planta agotada">
+            <h3>${planta.nombre}</h3>
+            <p>${planta.cuidado}</p>
+            <span class="precio">Agotado</span>
+        </li>`;
+        }else{
         html +=`
         <li class="planta">
             <h3>${planta.nombre}</h3>
             <p>${planta.cuidado}</p>
             <span class="precio">${formatearPrecio(planta.precio)}</span>
         </li>`;
+        }
     }
     catalogo.innerHTML = html;
 }

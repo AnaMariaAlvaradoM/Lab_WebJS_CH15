@@ -31,59 +31,87 @@ cierre su llave } y que cada declaración termine en punto y coma.
   --fondo: #f5f3ea;
   --verde: #304b3b;
   --texto: #343a34;
-  --salvia: #dce5d5;
-  --blanco: #fffefa;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background: var(--fondo);
+  padding: 20px;
+  background-color: var(--fondo);
   color: var(--texto);
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
 
+header,
+main,
+.pie {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px 8%;
-  background: var(--blanco);
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px 0;
 }
 
-header a {
+.marca,
+nav a {
   color: var(--verde);
   text-decoration: none;
 }
 
-header nav {
-  display: flex;
-  gap: 24px;
+/* Cambia el enlace cuando pasas el mouse */
+nav a:hover {
+  text-decoration: underline;
 }
 
-main {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 24px;
-}
-
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--verde);
-  font-family: Georgia, serif;
-}
-
-h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1.1;
-  max-width: 650px;
 }
 
 section {
-  margin-bottom: 56px;
+  margin: 30px 0;
+  padding: 15px;
+  background-color: white;
+}
+
+/* Selector de id */
+#inicio {
+  border-top: 4px solid var(--verde);
+}
+
+/* Selector de clase */
+.intro {
+  font-size: 18px;
+}
+
+.foto {
+  width: 100%;
+}
+
+/* Estados de disponibilidad */
+.abierto {
+  color: green;
+  background-color: #e2f1e5;
+}
+
+.cerrado {
+  color: darkred;
+  background-color: #f8e8e2;
+}
+
+.agotado {
+  color: gray;
+}
+
+.pie {
+  padding: 20px;
+  background-color: #dce5d5;
 }
 
 img {
@@ -93,10 +121,4 @@ img {
   object-fit: cover;
   border-radius: 16px;
   margin-top: 24px;
-}
-
-footer {
-  padding: 28px 8%;
-  background: var(--salvia);
-  color: var(--verde);
 }
