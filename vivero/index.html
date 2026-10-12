@@ -47,3 +47,73 @@ Pista: para ver tu página mientras trabajas, clic derecho sobre este
 archivo → "Open with Live Server".
 ============================================================
 -->
+<!-- Ejercicio 01 · El esqueleto del documento
+  - <!DOCTYPE html> y <html> con el idioma en español (lang="es").
+  - En el <head>: la codificación UTF-8, el viewport para celular
+    y un <title> que diga "Vivero Guadua" (puedes agregarle más texto).
+  - En el <head>: el <link> a styles.css y el <script> de app.js
+    con el atributo defer. -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivero Guadua</title>
+  <link rel="icon" type="image/svg+xml" href="https://api.iconify.design/streamline-pixel:ecology-growth-plant.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="encabezado">
+    <a class="marca" href="#inicio">Vivero Guadua</a>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#plantas">Plantas</a>
+      <a href="#cuidados">Cuidados</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Portada -->
+     <section id="inicio" class="portada">
+      <p id="estado" class="estado">Consultando horario...</p>
+      <h1>Bienvenido a Vivero Guadua</h1>
+      <p class="intro">
+        Sembramos con el <strong>corazón</strong>.
+        Cultivamos plantas de <strong>interior</strong> y <strong>exterior</strong> y te enseñamos a cuidarlas, <em>sin complicaciones</em>.
+      </p>
+      <a class="boton" href="#plantas">Ver plantas</a>
+      <img
+      class="foto"
+      src="https://images.unsplash.com/photo-1520157646479-22f25713523d?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+      alt="Surtido de suculentas en macetas"
+      >
+    </section>
+
+    <!-- Sección 1: PLantas -->
+    <section id="plantas" class="planta">
+      <h2>Plantas para tu hogar</h2>
+      <ul id="catalogo">
+      </ul>
+    </section>
+
+    <!-- Sección 2: Cuidados -->
+    <section id="cuidados" class="cuidados">
+            <h2>¡Cuida tus plantitas!</h2>
+            <p>
+              Te enseñamos a regar, abonar y trasplantar. Cada planta tiene su tarjeta de cuidados.
+            </p>
+        </section>
+    </main>
+
+    <footer id="visitanos" class="pie">
+        <address>
+            Carrera 1 # 37-28, Bogotá<br>
+            Lunes a sábado, de 8:00 a. m. a 5:00 p. m.
+        </address>
+        <small>© 2026 Vivero Guadua. Proyecto de clase.</small>
+    </footer>
+</body>
+</html>
