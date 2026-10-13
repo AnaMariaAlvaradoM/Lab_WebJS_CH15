@@ -75,7 +75,7 @@ cierre su llave } y que cada declaración termine en punto y coma.
     color: var(--verde-hoja);
 }
 
- nav a:hover {
+  nav a:hover {
     color: var(--verde-principal);
     font-weight: bold;
 }
@@ -84,10 +84,19 @@ cierre su llave } y que cada declaración termine en punto y coma.
     color: #40916c;
 }
 
-.cerrado {
+ .cerrado {
     color: #7f1d1d;
 }
 
-.agotado {
+ .agotado {
     color: #7f5539;
+}
+
+ img {
+    border-radius: 12px;
+}
+
+ img:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
 }
