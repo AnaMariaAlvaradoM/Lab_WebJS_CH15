@@ -10,13 +10,25 @@ const HORA_APERTURA = 8;
 const HORA_CIERRE = 17;
 
 const plantas = [
-    { nombre: "Suculenta echeveria", cuidado: "Riego cada 10 días. Mucha luz.", precio: 12000, stock: 15 },
-    { nombre: "Monstera deliciosa", cuidado: "Riego semanal. Luz indirecta.", precio: 68000, stock: 4 },
-    { nombre: "Helecho de Boston", cuidado: "Tierra húmeda. Sombra parcial.", precio: 35000, stock: 0 },
-    { nombre: "Cactus San Pedro", cuidado: "Riego cada 15 días. Sol directo.", precio: 18500, stock: 9 },
-    { nombre: "Lirio de paz", cuidado: "Riego semanal. Poca luz.", precio: 42000, stock: 0 },
-    { nombre: "Poto dorado", cuidado: "Riego cada 5 días. Luz media.", precio: 25000, stock: 12 },
+    { nombre: "Suculenta echeveria", cuidado: "Recomendación: Riego cada 10 días. Ubicar en zonas con abundante luz natural.", precio: 12000, stock: 15 },
+    { nombre: "Monstera deliciosa", cuidado: "Recomendación: Riego semanal. Mantener en lugares iluminados evitando el sol directo.", precio: 68000, stock: 4 },
+    { nombre: "Helecho de Boston", cuidado: "Recomendación: Tierra húmeda. Ubicar en espacios con sombra parcial.", precio: 35000, stock: 0 },
+    { nombre: "Cactus San Pedro", cuidado: "Recomendación: Riego cada 15 días. Exponer a la luz solar directa.", precio: 18500, stock: 9 },
+    { nombre: "Lirio de paz", cuidado: "Recomendación: Riego semanal. Ideal para espacios interiores con poca luz solar directa.", precio: 42000, stock: 0 },
+    { nombre: "Poto dorado", cuidado: "Recomendación: Riego cada 5 días. Mantener en ambientes con iluminación moderada.", precio: 25000, stock: 12 },
 ];
+
+
+// Imagenes para el catalogo de las plantas
+
+const imagenesPlantas = {
+    "Suculenta echeveria": "https://img.magnific.com/foto-gratis/mujer-primer-plano-maceta-pequena_23-2148357591.jpg",
+    "Monstera deliciosa":  "https://img.magnific.com/foto-gratis/plantas-interior-estudio_23-2151022061.jpg",
+    "Helecho de Boston":   "https://img.magnific.com/foto-gratis/jarro-jardineria-suelo_23-2148672709.jpg",
+    "Cactus San Pedro":    "https://img.magnific.com/foto-gratis/mujer-cubriendo-cabeza-cactus-pot_23-2148396835.jpg",
+    "Lirio de paz":        "https://img.magnific.com/foto-gratis/jarro-jardineria-suelo_23-2148672709.jpg",
+    "Poto dorado":         "https://img.magnific.com/foto-gratis/planta-mascara-africana-maceta_53876-133137.jpg"
+};
 
 // ============================================================
 // Ejercicio 06 · La lógica del negocio (no toca la página)
@@ -37,12 +49,13 @@ const plantas = [
 // ============================================================
 
 function estaAbierto(hora) {
-    // Tu código aquí
+    return hora >= HORA_APERTURA && hora < HORA_CIERRE;
 }
 
 function formatearPrecio(valor) {
-    // Tu código aquí
+    return "$" + valor.toLocaleString("es-CO");
 }
+
 
 // ============================================================
 // Ejercicio 07 · El estado en la página (DOM)
@@ -59,7 +72,16 @@ function formatearPrecio(valor) {
 // ============================================================
 
 function mostrarEstado() {
-    // Tu código aquí
+    const estado = document.getElementById("estado");
+    const horaActual = new Date().getHours();
+
+    if (estaAbierto(horaActual)) {
+        estado.textContent = "Abierto ahora. Cerramos a las 5:00 p. m.";
+        estado.classList.add("abierto");
+    } else {
+        estado.textContent = "Cerrado. Abrimos a las 8:00 a. m.";
+        estado.classList.add("cerrado");
+    }
 }
 
 // ============================================================
@@ -84,8 +106,41 @@ function mostrarEstado() {
 // ============================================================
 
 function mostrarCatalogo() {
-    // Tu código aquí
+    const catalogo = document.getElementById("catalogo");
+    let html = "";
+
+    for (let i = 0; i < plantas.length; i++) {
+
+    if (plantas[i].stock === 0) {
+        html += `
+            <li class="planta agotado">
+            <img src="${imagenesPlantas[plantas[i].nombre]}" alt="${plantas[i].nombre}">
+            <h3>${plantas[i].nombre}</h3>
+            <p>${plantas[i].cuidado}</p>
+            <span class="precio">Agotado</span>
+            </li>
+            `;
+}  
+    else {
+        html += `
+            <li class="planta">
+            <img src="${imagenesPlantas[plantas[i].nombre]}" alt="${plantas[i].nombre}">
+            <h3>${plantas[i].nombre}</h3>
+            <p>${plantas[i].cuidado}</p>
+            <span class="precio">${formatearPrecio(plantas[i].precio)}</span>
+            </li>
+            `;
 }
+    
+}
+    catalogo.innerHTML = html;
+
+}
+
+
+
+
+
 
 // No borres estas dos líneas: ponen a funcionar la página
 mostrarEstado();

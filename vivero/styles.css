@@ -38,7 +38,14 @@ cierre su llave } y que cada declaración termine en punto y coma.
 } 
 
  header {
-    padding: 20px;
+    padding: 30px;
+    background-color: #e6d5c3;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+ section {
+    margin: 40px 0;
 }
 
  body {
@@ -67,6 +74,10 @@ cierre su llave } y que cada declaración termine en punto y coma.
 }
 
 /* Ejercicio 05 · Los tres selectores y los estados */
+ #catalogo {
+    list-style: none;
+    padding: 0;
+}
  #estado {
     font-weight: bold;
 }
@@ -90,13 +101,44 @@ cierre su llave } y que cada declaración termine en punto y coma.
 
  .agotado {
     color: #7f5539;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+ .planta {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 70%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+ .precio {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--verde-principal);
 }
 
  img {
-    border-radius: 12px;
+    width: 500px;
+    max-width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
 }
 
  img:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
     transition: 0.3s;
+}
+
+ .planta img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
