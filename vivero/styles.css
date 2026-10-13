@@ -27,3 +27,166 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --verde-menta: #a8e6d7;
+  --verde-hoja: #4fa58f;
+  --verde-oscuro: #1f4d42;
+  --crema: #fbfaf5;
+  --texto: #2b2b2b;
+  --gris: #8a8a8a;
+  --rojo-agotado: #c0564b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--crema);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--verde-oscuro);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+header {
+  background-color: var(--verde-hoja);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: white;
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-left: 1.5rem;
+}
+
+nav a:hover {
+  color: var(--verde-menta);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+section {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#inicio img {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
+  border-radius: 16px;
+}
+
+#estado {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  background-color: var(--verde-menta);
+}
+
+.abierto {
+  background-color: var(--verde-menta);
+  color: var(--verde-oscuro);
+}
+
+.cerrado {
+  background-color: #f3d4d0;
+  color: var(--rojo-agotado);
+}
+
+#catalogo {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.planta {
+  background-color: white;
+  border-radius: 14px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s;
+}
+
+.planta:hover {
+  transform: translateY(-6px);
+}
+
+.planta h3 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.planta p {
+  color: var(--gris);
+  font-size: 0.9rem;
+  margin: 0 0 0.6rem;
+}
+
+.precio {
+  color: var(--verde-hoja);
+  font-weight: 600;
+}
+
+.agotado {
+  opacity: 0.6;
+  color: var(--gris);
+}
+
+.agotado .precio {
+  color: var(--rojo-agotado);
+}
+
+footer {
+  background-color: var(--verde-oscuro);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+footer address {
+  font-style: normal;
+  margin-bottom: 0.5rem;
+}
+
+footer small {
+  display: block;
+  opacity: 0.8;
+}
