@@ -27,3 +27,118 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+/* Ejercicio 04 · Variables y base */
+:root {
+     --verde-principal: #1b4332;
+    --verde-hoja: #2d6a4f;
+    --cafe-tierra: #5c3a21;
+    --crema: #faf6ee;
+    --fuente-principal: Arial, sans-serif;
+} 
+
+ header {
+    padding: 30px;
+    background-color: #e6d5c3;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+ section {
+    margin: 40px 0;
+}
+
+ body {
+    font-family: var(--fuente-principal);
+    color: var(--verde-principal);
+    background-color: var(--crema);
+    text-align: center;
+}
+    h1 {
+        color: var(--verde-principal);
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        color: var(--cafe-tierra);
+        font-style: italic;
+        margin-top: 20px;
+    }
+    
+ nav a {
+    color: var(--cafe-tierra);
+    text-decoration: none;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+/* Ejercicio 05 · Los tres selectores y los estados */
+ #catalogo {
+    list-style: none;
+    padding: 0;
+}
+ #estado {
+    font-weight: bold;
+}
+
+ .destacado {
+    color: var(--verde-hoja);
+}
+
+  nav a:hover {
+    color: var(--verde-principal);
+    font-weight: bold;
+}
+
+ .abierto {
+    color: #40916c;
+}
+
+ .cerrado {
+    color: #7f1d1d;
+}
+
+ .agotado {
+    color: #7f5539;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+ .planta {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 70%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+ .precio {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--verde-principal);
+}
+
+ img {
+    width: 500px;
+    max-width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+ img:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+ .planta img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
