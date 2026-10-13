@@ -1,8 +1,0 @@
-Ejercicio 03 · El contenido y los atributos
-
-- En la sección inicio: un <p id="estado"> que diga
-  "Consultando horario..." (JavaScript lo va a cambiar).
-- Un <strong> y un <em> dentro del texto de introducción.
-- Una <img> con src y un alt que describa la foto.
-- En la sección plantas: un <ul id="catalogo"></ul> VACÍO
-  (JavaScript lo va a llenar en el ejercicio 08).
