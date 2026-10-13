@@ -1,29 +1,418 @@
 /*
 ============================================================
 Ejercicios 04 y 05 · La identidad visual del vivero (CSS)
-============================================================
-Escribe tus estilos DEBAJO de este comentario.
-La paleta es TUYA: elige colores que cuenten la historia de un
-vivero (hojas, tierra, materas...). No copies la de Café Origen.
-
-Ejercicio 04 · Variables y base
-  - En :root, por lo menos 4 variables (--nombre: valor;) con tus
-    colores y fuentes.
-  - Usa esas variables con var(--nombre) en por lo menos 4 declaraciones.
-  - Una regla para body con font-family y color.
-  - Por lo menos una regla para los títulos (h1, h2 o h3).
-
-Ejercicio 05 · Los tres selectores y los estados
-  - Por lo menos una regla con selector de clase (.algo)
-    y una con selector de id (#algo).
-  - Por lo menos una regla con :hover.
-  - Las clases que JavaScript va a poner, cada una con color
-    o background-color:
-      .abierto  → cuando el vivero está abierto
-      .cerrado  → cuando está cerrado
-      .agotado  → una planta sin unidades (por ejemplo, en gris)
-
-Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
-cierre su llave } y que cada declaración termine en punto y coma.
+Estilo: Vivero Guadua - Atmósfera Zen, Orgánica y Serena
 ============================================================
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* Paleta Zen / Naturaleza */
+  --verde-bambu: #203a2e;       /* Tono principal profundo, bambú oscuro */
+  --verde-sabio: #486959;       /* Verde sabio / hoja serena */
+  --verde-musgo: #799a82;       /* Verde musgo suave */
+  --verde-luz: #eaf1ec;         /* Fondo menta sutil para badges y acentos */
+  --arena-zen: #f8f6f0;         /* Fondo general, papel de arroz / arena clara */
+  --blanco-puro: #ffffff;       /* Fondo de tarjetas y elementos */
+  --tierra-calida: #574b42;     /* Texto secundario y detalles rústicos */
+  --terracota-suave: #bc6c4b;   /* Acento cálido de maceta artesanal */
+  --terracota-fondo: #fcf1eb;   /* Fondo suave de alertas */
+  --gris-piedra: #9e9d96;       /* Elementos agotados / neutros */
+
+  /* Tipografías */
+  --fuente-titulos: 'Playfair Display', Georgia, serif;
+  --fuente-texto: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Sombras y acabados */
+  --sombra-zen: 0 10px 30px -5px rgba(32, 58, 46, 0.06), 0 4px 12px -2px rgba(32, 58, 46, 0.03);
+  --sombra-hover: 0 18px 36px -6px rgba(32, 58, 46, 0.12), 0 8px 16px -3px rgba(32, 58, 46, 0.06);
+  --borde-suave: 1px solid rgba(72, 105, 89, 0.12);
+  --radio-card: 18px;
+  --radio-pill: 999px;
+}
+
+/* Reset y base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  color: var(--tierra-calida);
+  background-color: var(--arena-zen);
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(121, 154, 130, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(188, 108, 75, 0.04) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Títulos */
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+  color: var(--verde-bambu);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.25;
+  margin-bottom: 0.8rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  position: relative;
+  display: inline-block;
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 45px;
+  height: 2px;
+  background: var(--verde-musgo);
+  margin-top: 6px;
+  border-radius: var(--radio-pill);
+}
+
+/* Encabezado Zen */
+header {
+  background: linear-gradient(135deg, #1b3328 0%, #294738 100%);
+  color: var(--arena-zen);
+  padding: 2.8rem 2rem 2.2rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(27, 51, 40, 0.15);
+}
+
+header h1 {
+  color: #f3f8f4;
+  max-width: 750px;
+  margin: 0 auto 1.4rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Navegación */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: #e5efe7;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1.3rem;
+  border-radius: var(--radio-pill);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+
+nav a[href="#inicio"]:empty::before { content: "Inicio"; }
+nav a[href="#plantas"]:empty::before { content: "Plantas"; }
+nav a[href="#cuidados"]:empty::before { content: "Cuidados"; }
+
+nav a:hover {
+  color: var(--blanco-puro);
+  background-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Contenido Principal */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+section {
+  margin-bottom: 3.5rem;
+}
+
+/* Sección 1: Inicio */
+#inicio {
+  text-align: center;
+}
+
+#inicio > p:first-of-type {
+  font-size: 1.15rem;
+  max-width: 680px;
+  margin: 0 auto 1.5rem;
+  color: var(--tierra-calida);
+  line-height: 1.8;
+}
+
+#inicio strong {
+  color: var(--verde-bambu);
+  font-weight: 600;
+}
+
+#inicio em {
+  color: var(--verde-sabio);
+  font-style: italic;
+  font-family: var(--fuente-titulos);
+}
+
+/* Imagen del Vivero */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radio-card);
+  box-shadow: var(--sombra-zen);
+  border: 5px solid var(--blanco-puro);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  margin-top: 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img:hover {
+  transform: scale(1.015);
+  box-shadow: var(--sombra-hover);
+}
+
+/* Estado del Horario (DOM) */
+#estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radio-pill);
+  margin: 1rem auto;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+}
+
+.abierto {
+  color: #1a4f32;
+  background-color: var(--verde-luz);
+  border: 1px solid #b8dac1;
+  box-shadow: 0 2px 8px rgba(32, 79, 50, 0.08);
+}
+
+.abierto::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #2e8b57;
+  box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.25);
+}
+
+.cerrado {
+  color: #8c3b22;
+  background-color: var(--terracota-fondo);
+  border: 1px solid #f1c5b4;
+  box-shadow: 0 2px 8px rgba(140, 59, 34, 0.08);
+}
+
+.cerrado::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #c04d2e;
+  box-shadow: 0 0 0 3px rgba(192, 77, 46, 0.25);
+}
+
+/* Sección 2: Catálogo de Plantas */
+#catalogo, .catalogo {
+  list-style: none;
+  padding: 0;
+  margin: 1.8rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.planta {
+  background-color: var(--blanco-puro);
+  border-radius: var(--radio-card);
+  padding: 1.6rem;
+  border: var(--borde-suave);
+  border-top: 4px solid var(--verde-sabio);
+  box-shadow: var(--sombra-zen);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-top-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.planta:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-hover);
+  border-top-color: var(--terracota-suave);
+}
+
+.planta h3 {
+  margin: 0 0 0.6rem 0;
+  font-size: 1.25rem;
+  color: var(--verde-bambu);
+}
+
+.planta p {
+  color: #665b52;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0 0 1.2rem 0;
+  flex-grow: 1;
+}
+
+.precio {
+  align-self: flex-start;
+  background-color: var(--verde-luz);
+  color: var(--verde-bambu);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radio-pill);
+  border: 1px solid #d2e4d7;
+  letter-spacing: 0.02em;
+}
+
+/* Estado Agotado */
+.planta.agotado {
+  background-color: #f7f7f4;
+  border-top-color: var(--gris-piedra);
+  opacity: 0.82;
+}
+
+.planta.agotado:hover {
+  transform: none;
+  box-shadow: var(--sombra-zen);
+  border-top-color: var(--gris-piedra);
+}
+
+.planta.agotado h3 {
+  color: var(--gris-piedra);
+  text-decoration: line-through;
+}
+
+.planta.agotado p {
+  color: #8c8c85;
+}
+
+.planta.agotado .precio {
+  background-color: #eaeae5;
+  color: #7d7d76;
+  border-color: #dadad3;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Sección 3: Cuidados */
+#cuidados {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: var(--borde-suave);
+  padding: 2rem 2.5rem;
+  border-radius: var(--radio-card);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--sombra-zen);
+}
+
+#cuidados h2 {
+  margin-top: 0;
+  font-size: 1.35rem;
+  color: var(--verde-bambu);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+#cuidados h2::after {
+  margin-top: 10px;
+}
+
+/* Footer / Visítanos */
+footer#visitanos, footer {
+  background: linear-gradient(135deg, #1f3328 0%, #15241c 100%);
+  color: #dbe7de;
+  padding: 3.5rem 1.5rem 2.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+footer address {
+  font-style: normal;
+  line-height: 2;
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto 1.8rem;
+  color: #e5efe8;
+}
+
+footer a {
+  color: #c9e0d0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  border-bottom: 1px dashed rgba(201, 224, 208, 0.4);
+}
+
+footer a:hover {
+  color: var(--blanco-puro);
+  border-bottom-style: solid;
+}
+
+footer small {
+  display: block;
+  font-size: 0.85rem;
+  color: #8fa896;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.5rem;
+}
+
+/* Adaptabilidad para Móviles */
+@media (max-width: 600px) {
+  header {
+    padding: 2rem 1rem 1.8rem;
+  }
+
+  nav {
+    gap: 0.6rem;
+  }
+
+  nav a {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.88rem;
+  }
+
+  main {
+    padding: 1.8rem 1rem;
+  }
+
+  #catalogo {
+    grid-template-columns: 1fr;
+  }
+
+  #cuidados {
+    padding: 1.5rem;
+  }
+}
