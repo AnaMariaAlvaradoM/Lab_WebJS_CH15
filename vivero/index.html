@@ -11,9 +11,19 @@ Ejercicio 01 · El esqueleto del documento
   - En el <head>: la codificación UTF-8, el viewport para celular
     y un <title> que diga "Vivero Guadua" (puedes agregarle más texto).
   - En el <head>: el <link> a styles.css y el <script> de app.js
-    con el atributo defer.
+    con el atributo defer. -->
 
-Ejercicio 02 · La estructura semántica
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Vivero Guadua de Andrés</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="https://t3.ftcdn.net/jpg/03/90/48/54/240_F_390485461_E82Wqv3otUATBTl5MLweaJoRJDaO4H89.jpg" type="image/x-icon">                 
+</head>
+
+<!--Ejercicio 02 · La estructura semántica
   - Un <header> con el nombre del vivero y un <nav> con 3 enlaces
     que lleven a las secciones de la página (href="#id-de-la-seccion").
   - Un solo <main> con 3 <section>, cada una con su id:
@@ -21,17 +31,82 @@ Ejercicio 02 · La estructura semántica
   - Un solo <h1> en toda la página y un <h2> en cada sección
     que tenga título (plantas y cuidados).
   - Un <footer> (fuera del <main>) con id="visitanos",
-    un <address> y un <small>.
+    un <address> y un <small>. -->
 
-Ejercicio 03 · El contenido y los atributos
+<body>
+
+  <header class="encabezado">
+    <a class="negocio" href="#inicio">
+      El vivero de Andrés
+    </a>
+
+    <nav>
+      <a href="#inicio">
+        INICIO  |   
+      </a>
+      <a href="#plantas">
+          PLANTAS  |
+      </a>
+      <a href="#cuidados">
+          CUIDADOS
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>
+      En el vivero de Andrés, amamos la madre Tierra
+    </h1>
+
+    <section id="inicio">
+      <h2>
+        Inicio
+      </h2>
+        <p id="estado" class="abierto" class="cerrado">Consultando horario...</p>
+      <h3>INTRODUCCIÓN</h3>
+        <P class="textosinfo">Cultivamos <strong>plantas de interior y exterior</strong> plantas de interior y exterior en la
+    sabana de Bogotá y <em>te enseñamos a cuidarlas</em>, sin complicaciones.</P>
+    </section>
+
+    <section id="plantas">
+      <h2>
+        Plantas
+      </h2>
+      <img src="https://t3.ftcdn.net/jpg/02/76/13/14/240_F_276131440_KT4GSxyRgWs4lKgETzr4OI2eUp5KRshc.jpg" alt="Imagen de plantas lavanda, representando plantas.">
+        <ul id="catalogo" class="agotado"></ul>
+    </section>
+
+    <section id="cuidados">
+      <h2>
+        Cuidados
+      </h2>
+      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80" alt="muestra una pala de jardín con tierra junto a una matera de barro">
+      <p class="textosinfo">Te enseñamos a <em>regar, abonar y trasplantar</em>. Cada planta
+    sale con su tarjeta de cuidados.</p>
+    </section>
+  </main>
+
+  <footer id="visitanos">
+    <address>
+      Dirección: Calle 12 # 8-30, Chía
+    </address>
+    <p>Horario: Lunes a sábado, de 8:00 a. m. a 5:00 p. m.</p>
+    <small>
+      Derechos: © 2026 Vivero Guadua. Proyecto de clase.
+    </small>
+  </footer>
+
+
+
+<!--Ejercicio 03 · El contenido y los atributos
   - En la sección inicio: un <p id="estado"> que diga
     "Consultando horario..." (JavaScript lo va a cambiar).
   - Un <strong> y un <em> dentro del texto de introducción.
   - Una <img> con src y un alt que describa la foto.
   - En la sección plantas: un <ul id="catalogo"></ul> VACÍO
-    (JavaScript lo va a llenar en el ejercicio 08).
+    (JavaScript lo va a llenar en el ejercicio 08). -->
 
-Textos que puedes usar (o escribir los tuyos):
+<!--Textos que puedes usar (o escribir los tuyos):
   - Título principal: Plantas que se adaptan a tu casa.
   - Introducción: Cultivamos plantas de interior y exterior en la
     sabana de Bogotá y te enseñamos a cuidarlas, sin complicaciones.
@@ -47,3 +122,6 @@ Pista: para ver tu página mientras trabajas, clic derecho sobre este
 archivo → "Open with Live Server".
 ============================================================
 -->
+  <script src="app.js" defer></script>
+</body>
+</html>
