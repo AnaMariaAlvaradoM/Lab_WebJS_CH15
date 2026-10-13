@@ -38,10 +38,12 @@ const plantas = [
 
 function estaAbierto(hora) {
     // Tu código aquí
+    return hora >= HORA_APERTURA && hora < HORA_CIERRE
 }
 
 function formatearPrecio(valor) {
     // Tu código aquí
+    return "$" + valor.toLocaleString("es-CO")
 }
 
 // ============================================================
@@ -60,6 +62,18 @@ function formatearPrecio(valor) {
 
 function mostrarEstado() {
     // Tu código aquí
+    const pEstado = document.getElementById("estado");
+    const horaActual = new Date().getHours();
+
+    pEstado.classList.remove("abierto", "cerrado");
+
+    if (estaAbierto(horaActual)) {
+        pEstado.textContent = "Abierto ahora. Cerramos a las 5:00 p. m.";
+        pEstado.classList.add("abierto");
+    } else {
+        pEstado.textContent = "Cerrado. Abrimos a las 8:00 a. m.";
+        pEstado.classList.add("cerrado");
+    }
 }
 
 // ============================================================
@@ -85,6 +99,22 @@ function mostrarEstado() {
 
 function mostrarCatalogo() {
     // Tu código aquí
+    const ulCatalogo = document.getElementById("catalogo");
+    if (!ulCatalogo) return;
+    let htmlCatalogo = "";
+    for (const planta of plantas) {
+        const estaAgotado = planta.stock === 0;
+        const claseLi = estaAgotado ? "planta agotado" : "planta";
+        const precioTexto = estaAgotado ? "Agotado" : formatearPrecio(planta.precio);
+        htmlCatalogo += `
+            <li class="${claseLi}">
+                <h3>${planta.nombre}</h3>
+                <p>${planta.cuidado}</p>
+                <span class="precio">${precioTexto}</span>
+            </li>
+        `;
+    }
+    ulCatalogo.innerHTML = htmlCatalogo;
 }
 
 // No borres estas dos líneas: ponen a funcionar la página
