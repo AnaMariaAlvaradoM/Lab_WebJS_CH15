@@ -27,3 +27,67 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+/* Ejercicio 04 · Variables y base */
+:root {
+     --verde-principal: #1b4332;
+    --verde-hoja: #2d6a4f;
+    --cafe-tierra: #5c3a21;
+    --crema: #faf6ee;
+    --fuente-principal: Arial, sans-serif;
+} 
+
+ header {
+    padding: 20px;
+}
+
+ body {
+    font-family: var(--fuente-principal);
+    color: var(--verde-principal);
+    background-color: var(--crema);
+    text-align: center;
+}
+    h1 {
+        color: var(--verde-principal);
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        color: var(--cafe-tierra);
+        font-style: italic;
+        margin-top: 20px;
+    }
+    
+ nav a {
+    color: var(--cafe-tierra);
+    text-decoration: none;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+/* Ejercicio 05 · Los tres selectores y los estados */
+ #estado {
+    font-weight: bold;
+}
+
+ .destacado {
+    color: var(--verde-hoja);
+}
+
+ nav a:hover {
+    color: var(--verde-principal);
+    font-weight: bold;
+}
+
+ .abierto {
+    color: #40916c;
+}
+
+.cerrado {
+    color: #7f1d1d;
+}
+
+.agotado {
+    color: #7f5539;
+}
