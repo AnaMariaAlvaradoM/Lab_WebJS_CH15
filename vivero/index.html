@@ -13,6 +13,8 @@ Ejercicio 01 · El esqueleto del documento
   - En el <head>: el <link> a styles.css y el <script> de app.js
     con el atributo defer.
 
+
+
 Ejercicio 02 · La estructura semántica
   - Un <header> con el nombre del vivero y un <nav> con 3 enlaces
     que lleven a las secciones de la página (href="#id-de-la-seccion").
@@ -47,3 +49,57 @@ Pista: para ver tu página mientras trabajas, clic derecho sobre este
 archivo → "Open with Live Server".
 ============================================================
 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivero Guadua</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <header>
+    Vivero Guadua
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#plantas">Plantas</a>
+      <a href="#cuidados">Cuidados</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h1>
+        Da vida a tu hogar con la elegancia natural de Vivero Guadua
+      </h1>
+      <p id="estado"> Consultando horario ...</p>
+      <h2> 
+        <strong> <em>Introducción: </em>Cultivamos plantas de interior y exterior en la
+      sabana de Bogotá y te enseñamos a cuidarlas, sin complicaciones.</strong></h2>
+      <img src=" https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80" alt="foto de una pala y tierra">
+    </section>
+    <section id="plantas">
+      <h2>Explora nuestras variedades de plantas y encuentra la ideal para tu espacio</h2>
+      <ul id="catalogo">
+
+      </ul>
+    </section>
+    <section id="cuidados">
+      <h2>Guía práctica para mantener tus plantas siempre sanas, fuertes y llenas de vida.</h2>
+    </section>
+  </main>
+
+  <footer id="visitanos">
+    <address>
+      Carrera 7 # 168 - 25, Usaquén, Bogotá, Cundinamarca<br>
+      Lunes a Sábado: 8:00 a. m. – 5:00 p. m.
+    </address>
+    <small>© 2026 Vivero Guadua · Cultivando vida y frescura para tu hogar. Todos los derechos reservados.</small>
+  </footer>
+</body>
+</html>

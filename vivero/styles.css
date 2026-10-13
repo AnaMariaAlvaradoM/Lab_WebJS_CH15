@@ -27,3 +27,120 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+:root {
+  --verde: #2D5A27;
+  --menta: #E8F5E9;
+  --oliva: #556B2F;
+  --terracotta: #8D5B4C;
+  --crema: #FDFBF7;
+  --corteza: #3A2E2B;
+  --amarillo: #F4C430;
+  --blanco: #FFFFFF;
+  --fuentetitulo: "Playfair Display";
+  --texto: "Inter";
+}
+
+body {
+  background-color: var(--crema);
+  color: var(--corteza);
+  font-family: var(--texto);
+}
+
+h1, h2 {
+  color: var(--verde);
+  font-family: var(--fuentetitulo);
+}
+
+header {
+  background-color: var(--verde);
+  color: var(--blanco);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 1.5rem;
+}
+header nav a:hover {
+  color: var(--amarillo);
+}
+
+
+section {
+  background-color: var(--blanco);
+  border-left: 4px solid var(--terracotta);
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;    
+  padding: 0 1.5rem;
+}
+
+#inicio {
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.tarjeta-producto {
+  background-color: var(--blanco);
+  border: 1px solid var(--oliva);
+  padding: 1rem;
+}
+
+a:hover {
+  color: var(--amarillo);
+  text-decoration: underline;
+}
+img {
+  max-width: 100%;
+  width: 450px;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 8px;
+}
+.abierto {
+  background-color: var(--menta);
+  color: var(--verde);
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.cerrado {
+  background-color: #F8D7DA; /* Tono rojizo suave */
+  color: #721C24;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.agotado {
+  background-color: #E2E3E5; 
+  color: #6C757D;
+  opacity: 0.75;
+}
+
+footer {
+  background-color: var(--corteza);
+  color: var(--crema);
+  text-align: center;
+  padding: 2.5rem 1rem;
+  margin-top: 4rem;
+}
+footer address {
+  font-style: normal;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+footer small {
+  display: block;
+  opacity: 0.85;
+  font-size: 0.875rem;
+}
