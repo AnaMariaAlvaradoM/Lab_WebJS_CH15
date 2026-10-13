@@ -47,3 +47,58 @@ Pista: para ver tu página mientras trabajas, clic derecho sobre este
 archivo → "Open with Live Server".
 ============================================================
 -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivero Guadua</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"></linkrel>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1> Vivero Guadua </h1>
+    <a class="marca" href="#inicio">Vivero Guadua</a>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#plantas">Plantas</a>
+      <a href="#cuidados">Cuidados</a>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="inicio">
+      <h2>Inicio</h2>
+      <p id ="estado">Consultando horario...</p>
+      <p> <strong>Cultivamos</strong> plantas de interior y exterior en la sabana de Bogotá 
+        y te enseñamos a cuidarlas, <em>sin complicaciones</em>
+      </p>
+      
+      <img src="https://a.storyblok.com/f/160385/890x605/63c0640b05/tipos-viveros.jpg" alt="Cultivo de plantas">
+    </section>
+    <section id="plantas">
+      <h2>Plantas</h2>
+      <ul id="catalogo"></ul>
+
+    </section>
+
+    <section id ="cuidados">
+      <h2>Cuidados</h2>
+      <p id = cuidados></p>
+
+    </section>
+  </main>
+
+  <footer id = "visitanos">
+    <address>
+      Cra. 11 #72-82, Bogotá
+    </address>
+    <small>
+      © 2026 Vivero Guadua
+    </small>
+  </footer>
+</body>
+</html>
