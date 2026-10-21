@@ -27,3 +27,130 @@ Pista: si una regla "no hace nada", revisa que la regla de ARRIBA
 cierre su llave } y que cada declaración termine en punto y coma.
 ============================================================
 */
+
+:root {
+  /* Paleta de colores */
+  --color-principal: #2d5a27;   /* Verde hojas */
+  --color-secundario: #4e8752;  /* Verde claro */
+  --color-acento: #a0522d;      /* Terracota / Materas */
+  --color-fondo: #f4f7f4;       /* Fondo suave */
+  --color-texto: #222222;       /* Gris oscuro para lectura */
+  
+  /* Fuentes y tipografía */
+  --fuente-titulos: 'Playfair Display', Georgia, serif;
+  --fuente-cuerpo: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente-cuerpo);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-principal);
+}
+
+/* ============================================================
+Estilos de la estructura
+============================================================ */
+
+.encabezado {
+  background-color: var(--color-principal);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.encabezado h1 {
+  color: white; 
+  margin: 0;
+}
+
+.encabezado nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* REGLA CON :HOVER */
+.encabezado nav a:hover {
+  color: var(--color-secundario);
+}
+
+/* Estado del horario */
+#estado {
+  background-color: #e2ede2;
+  color: var(--color-texto);
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+/* ============================================================
+Clases para JavaScript (Requisito Ejercicio 05)
+============================================================ */
+
+.abierto {
+  background-color: #d4edda !important; 
+  color: #155724 !important;            
+}
+
+.cerrado {
+  background-color: #f8d7da !important; 
+  color: #721c24 !important;            
+}
+
+.agotado {
+  background-color: #e2e3e5 !important; 
+  color: #383d41 !important;            
+  opacity: 0.6;                        
+}
+
+/* ============================================================
+Estilos del Footer (Visítanos)
+============================================================ */
+
+#visitanos {
+  background-color: var(--color-acento); 
+  color: #ffffff;                        
+  text-align: center;                    
+  padding: 2rem 1rem;                    
+  margin-top: 3rem;                      
+}
+
+#visitanos address {
+  font-style: normal;                    
+  margin-bottom: 1.5rem;                
+  font-size: 1rem;
+  line-height: 1.8;                     
+}
+
+#visitanos small {
+  display: block;                        
+  font-size: 0.85rem;
+  opacity: 0.8;                         
+}
